@@ -45,6 +45,7 @@ class User extends Authenticatable implements JWTSubject
         'name',
         'email',
         'password',
+        
     ];
 
     /**
@@ -82,4 +83,13 @@ class User extends Authenticatable implements JWTSubject
     protected $appends = [
         'profile_photo_url',
     ];
+
+    ### Relationships ###
+    public function favourites(){
+        return $this->hasMany(Favourite::class);
+    }
+
+    public function products(){
+        return $this->hasMany(Products::class);
+    }
 }
