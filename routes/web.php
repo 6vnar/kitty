@@ -14,6 +14,8 @@ use App\Http\Livewire\Pages\{
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('change-language/{locale}', [MainController::class, 'changeLanguage'])->name('change_locale');
+
 
 Route::get('/', Home::class)->name('home');
 

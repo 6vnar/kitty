@@ -1,3 +1,3 @@
 <div>
-<h1>main home</h1>
+<h1>{{ __('ui.task') }}
 </div>
