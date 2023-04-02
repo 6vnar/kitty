@@ -40,4 +40,9 @@ class Products extends Model
         return $this->belongsToMany(Favorite::class);
     }
 
+    public function sales()
+    {
+        return $this->hasMany(Sale::class);
+    }
+
 }
