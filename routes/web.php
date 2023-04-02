@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
-
+use App\Http\Livewire\Pages\{
+    Home\Main as Home,};
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,24 +15,5 @@ use App\Http\Controllers\MainController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', Home::class)->name('home');
 
-// language Change Route
-Route::get('change-language/{locale}', [MainController::class, 'changeLanguage'])->name('change_locale');
-
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
-
-
-Route::middleware(['auth'])->group(function () {
-    //code
-});
