@@ -20,11 +20,12 @@ class sidebar extends Component
                 'Menu',
                 [
                     new TabItem('Home', 'fa-solid fa-home', 'home'),
-                    new TabItem('All products', 'fa-solid fa-film', 'home'),
-                    new TabItem('categorys', 'fa-solid fa-tv', 'home'),
+                    new TabItem('clothes', 'fa-solid fa-shirt', 'home'),
+                    new TabItem('makeup', 'fa-solid fa-lips','home', true),
+                    new TabItem('accessories ', 'fa-solid fa-accessories', 'home', true),
+                    new TabItem('shoes', 'fa-sharp fa-solid fa-home', 'home'),
                     new TabItem('Favourites', 'fa-solid fa-heart', 'home', true),
-                    new TabItem('something ', 'fa-solid fa-clock', 'home', true),
-                    new TabItem('something', 'fa-solid fa-users','home', true),
+
                 ]
             ),
             new Tab(

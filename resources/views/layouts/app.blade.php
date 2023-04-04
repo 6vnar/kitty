@@ -35,9 +35,9 @@
 
             {{-- Left Sidebar --}}
             <div class="print:hidden">
-
                 <x-sidebar />
             </div>
+            
             {{-- Content --}}
             <div class="w-full pb-0 sm:pb-10 sm:w-8/12 sm:basis-8/12 sm:grow">
                 <div class="flex flex-col lg:items-center justify-between p-5 border-b sm:h-20 sm:flex-row">
@@ -66,13 +66,8 @@
                 </div>
             </div>
 
-            {{-- Right Sidebar --}}
-            {{-- @if (Route::is('home*') || Route::is('movies-all') || Route::is('series-all'))
-            @livewire('right-side')
-            @endif --}}
         </div>
         <livewire:components.footer />
-
     </div>
 
 
