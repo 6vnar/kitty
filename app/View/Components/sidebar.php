@@ -21,9 +21,9 @@ class sidebar extends Component
                 [
                     new TabItem('Home', 'fa-solid fa-home', 'home'),
                     new TabItem('clothes', 'fa-solid fa-shirt', 'home'),
-                    new TabItem('makeup', 'fa-solid fa-lips','home', true),
-                    new TabItem('accessories ', 'fa-solid fa-accessories', 'home', true),
-                    new TabItem('shoes', 'fa-sharp fa-solid fa-home', 'home'),
+                    new TabItem('makeup', 'fa-solid fa-eye','home'),
+                    new TabItem('accessories ', 'fa-solid fa-venus-mars', 'home'),
+                    new TabItem('shoes', 'fa-solid fa-home', 'home'),
                     new TabItem('Favourites', 'fa-solid fa-heart', 'home', true),
 
                 ]

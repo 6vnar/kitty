@@ -31,6 +31,7 @@ return new class extends Migration
             $table->integer('sale');
             $table->string('image_path');
             $table->integer('type'); // 1:clothes, 2:shoes, 3:accessories 4:makeup
+            $table->boolean('is_on_sale')->default(false);
             $table->timestamps();
         });
     }
