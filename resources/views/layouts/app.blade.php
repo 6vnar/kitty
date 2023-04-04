@@ -29,10 +29,12 @@
         integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
-<body class="font-sans antialiased bg-gray-200">
-    <div class="p-6 mx-auto">
+<body class="w-full font-sans antialiased bg-gray-200">
+    <div class="pt-6 mx-auto">
         <div >
-            <div class="text-center bg-white rounded-lg">
+            <div class="text-center bg-white rounded-lg ">
+                <livewire:components.navbar />
+
                 <div class="flex flex-row" x-data="{ sidebar_extended: false }">
                     {{-- Left Sidebar --}}
                     <x-sidebar />
@@ -49,16 +51,20 @@
                             @endif
                         </div>
                         <div class="px-10"></div>
-                            <livewire:components.navbar />
                             @isset($slot)
                                 {{ $slot }}
                             @endisset
                         </div>
+                        
                     </div>
-
+                    
                 </div>
+
             </div>
+
         </div>
+        <livewire:components.footer />
+
     </div>
 
     @stack('modals')

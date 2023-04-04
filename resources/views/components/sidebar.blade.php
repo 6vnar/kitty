@@ -1,4 +1,4 @@
-<div>
+<div >
 <div class="p-6 border-r" :class="sidebar_extended ? 'basis-2/12 w-2/12' : 'basis-1/12 w-1/12'">
     <aside class="sticky top-0 py-5" aria-label="Sidebar ">
         <div class="overflow-y-hidden h-screen" :class="sidebar_extended ? 'pr-9 pl-3' : ''">

@@ -21,8 +21,8 @@
                         </li>
                     </ul>
                 </div>
-                <div>
-                    <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Help center</h2>
+                <div >
+                    <h2 class="mb-6  text-sm font-semibold text-gray-900 uppercase dark:text-white">Help center</h2>
                     <ul class="text-gray-500 dark:text-gray-400 font-medium">
                         <li class="mb-4">
                             <a href="#" class="hover:underline">Discord Server</a>
@@ -70,7 +70,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="px-10 py-12 bg-gray-100 dark:bg-gray-700 md:flex md:items-center md:justify-between">
+            <div class="px-10 py-12 bg-white dark:bg-gray-700 md:flex md:items-center md:justify-between">
                 <span class="text-sm text-gray-500 dark:text-gray-300 sm:text-center">© 2023 <a
                         href="https://flowbite.com/">Kitty</a>. All Rights Reserved.
                 </span>
