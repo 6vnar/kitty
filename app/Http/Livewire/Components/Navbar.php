@@ -6,6 +6,7 @@ use Livewire\Component;
 
 class Navbar extends Component
 {
+    public $selected;
     
     public function render()
     {

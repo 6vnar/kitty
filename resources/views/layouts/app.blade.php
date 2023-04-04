@@ -25,25 +25,29 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/flowbite@1.4.6/dist/flowbite.js"></script>
     <script src="https://kit.fontawesome.com/4e8940f861.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
+        integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
-<body class="font-sans antialiased">
+<body class="font-sans antialiased antialiased  bg-white" dir="rtl">
     <x-jet-banner />
 
-    <div class="min-h-screen bg-gray-100">
+    <div class="min-h-screen bg-gray-100 bg-white">
 
     
         <!-- Page Heading -->
-        @if (isset($header))
-        <header class="bg-white shadow">
+        <!-- @if (isset($header))
+        <header class=" shadow">
             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                 {{ $header }}
             </div>
         </header>
-        @endif
-        <livewire:components.navbar />
+        @endif -->
 
         <!-- Page Content -->
-        <main>
+        <main class="bg-white relative ">
+        <livewire:components.navbar  />
+
             {{ $slot }}
         </main>
     </div>
