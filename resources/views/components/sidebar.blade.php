@@ -59,10 +59,12 @@
                 </ul>
             @endforeach
 
-            {{-- <x-ui.icon-button @click="sidebar_extended=!sidebar_extended" x-show="sidebar_extended"
-                icon="fas fa-arrow-left text-xl" color="secondary" class="py-3 px-6 mt-10" text=" Together" />
-            <x-ui.icon-button @click="sidebar_extended=!sidebar_extended" x-show="!sidebar_extended"
-                icon="fas fa-arrow-right text-xl" color="secondary" class="py-3 px-6 mt-10" text=" Together" /> --}}
+            {{-- <div>
+                kk
+            </div>
+            <div >
+                gg
+            </div> --}}
     </aside>
 </div>
 </div>
