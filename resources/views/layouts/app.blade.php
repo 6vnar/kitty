@@ -29,47 +29,57 @@
         integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
-<body class="w-full font-sans antialiased bg-gray-200">
-    <div class="pt-6 mx-auto">
-        <div >
-            <div class="text-center bg-white rounded-lg ">
-                <livewire:components.navbar />
+<body class="font-sans tajawal bg-secondary-100 " >
+    <div class="p-0 mx-auto sm:p-6">
+        <div class="flex flex-row h-screen bg-white rounded-lg sm:h-main" x-data="{ sidebar_extended: false, showSideBar: false }" x-cloak>
 
-                <div class="flex flex-row" x-data="{ sidebar_extended: false }">
-                    {{-- Left Sidebar --}}
-                    <x-sidebar />
+            {{-- Left Sidebar --}}
+            <div class="print:hidden">
 
-                    {{-- Content --}}
-                    <div class="basis-8/12 w-8/12 grow pb-10">
-                        <div class="h-36 flex items-center p-10 border-b justify-between mb-10">
-                            <span class="text-2xl text-gray-600 font-semibold">@yield('title')</span>
-                            @yield('header-actions')
-
-                            @hasSection ('disable-search')
-                            @else
-                                {{-- <livewire:ui.search /> --}}
-                            @endif
-                        </div>
-                        <div class="px-10"></div>
-                            @isset($slot)
-                                {{ $slot }}
-                            @endisset
-                        </div>
-                        
+                <x-sidebar />
+            </div>
+            {{-- Content --}}
+            <div class="w-full pb-0 sm:pb-10 sm:w-8/12 sm:basis-8/12 sm:grow">
+                <div class="flex flex-col lg:items-center justify-between p-5 border-b sm:h-20 sm:flex-row">
+                    <div class="flex justify-between mb-5 print:hidden">
+                        <span class="text-2xl font-semibold text-secondary-700">@yield('title')</span>
                     </div>
+
+                    @yield('header-actions')
                     
+                    <div class="flex flex-row items-center justify-between print:hidden">
+                        {{-- @hasSection('disable-search')
+                        @else
+                        @if (Request::route()->getName() == 'dashboard')
+                        <livewire:ui.filter />
+                        @else
+                        <livewire:ui.search />
+                        @endif
+                        @endif --}}
+                    </div>
                 </div>
 
+                <div class="p-1 overflow-y-auto sm:p-5 h-content bg-secondary-50">
+                    @isset($slot)
+                    {{ $slot }}
+                    @endisset
+                </div>
             </div>
 
+            {{-- Right Sidebar --}}
+            {{-- @if (Route::is('home*') || Route::is('movies-all') || Route::is('series-all'))
+            @livewire('right-side')
+            @endif --}}
         </div>
         <livewire:components.footer />
 
     </div>
 
+
     @stack('modals')
+
     @livewireScripts
-    {{-- <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script> --}}
+
 
 </body>
 

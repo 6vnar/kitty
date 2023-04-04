@@ -59,12 +59,15 @@
                 </ul>
             @endforeach
 
-            {{-- <div>
-                kk
-            </div>
-            <div >
-                gg
-            </div> --}}
+            <button @click="sidebar_extended=!sidebar_extended" x-show="sidebar_extended"
+                class="py-3 px-6 mt-10" text="Watch Together">
+                <i class="fas fa-arrow-left text-xl"></i>
+            </button>
+            
+        <button @click="sidebar_extended=!sidebar_extended" x-show="!sidebar_extended"
+            class="py-3 px-6 mt-10" text="Watch Together" >
+                <i class="fas fa-arrow-right text-xl"></i>
+        </button>
     </aside>
 </div>
 </div>
