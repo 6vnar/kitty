@@ -29,33 +29,42 @@
         integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
-<body class="font-sans antialiased antialiased  bg-white" dir="rtl">
-    <x-jet-banner />
+<body class="font-sans antialiased bg-gray-200">
+    <div class="p-6 mx-auto">
+        <div >
+            <div class="text-center bg-white rounded-lg">
+                <div class="flex flex-row" x-data="{ sidebar_extended: false }">
+                    {{-- Left Sidebar --}}
+                    <x-sidebar />
 
-    <div class="min-h-screen bg-gray-100 bg-white">
+                    {{-- Content --}}
+                    <div class="basis-8/12 w-8/12 grow pb-10">
+                        <div class="h-36 flex items-center p-10 border-b justify-between mb-10">
+                            <span class="text-2xl text-gray-600 font-semibold">@yield('title')</span>
+                            @yield('header-actions')
 
-    
-        <!-- Page Heading -->
-        <!-- @if (isset($header))
-        <header class=" shadow">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                {{ $header }}
+                            @hasSection ('disable-search')
+                            @else
+                                {{-- <livewire:ui.search /> --}}
+                            @endif
+                        </div>
+                        <div class="px-10"></div>
+                            <livewire:components.navbar />
+                            @isset($slot)
+                                {{ $slot }}
+                            @endisset
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </header>
-        @endif -->
-
-        <!-- Page Content -->
-        <main class="bg-white relative ">
-        <livewire:components.navbar  />
-
-            {{ $slot }}
-        {{-- <livewire:components.footer  /> --}}
-        </main>
+        </div>
     </div>
 
     @stack('modals')
-
     @livewireScripts
-    @livewireChartsScripts
+    {{-- <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script> --}}
+
 </body>
+
 </html>
