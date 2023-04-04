@@ -49,6 +49,7 @@
         <livewire:components.navbar  />
 
             {{ $slot }}
+        {{-- <livewire:components.footer  /> --}}
         </main>
     </div>
 

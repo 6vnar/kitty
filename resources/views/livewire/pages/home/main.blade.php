@@ -4,29 +4,18 @@
             <div class="inner-header flex">
             {{ __('ui.add') }}
             </div>
-            <div class="top-0">
-                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-                    <defs>
-                        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-                    </defs>
-                    <g class="parallax">
-                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
-                        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
-                        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
-                        <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-                    </g>
-                </svg>
-            </div>
+            @livewire('ui.waves')
         </div>
         <div class="content flex">
 
         </div>
     </div>
-    <div class="bottom-0">
+    {{-- <div class="bottom-0">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path fill="#fb97ac" fill-opacity="1" d="M0,0L24,21.3C48,43,96,85,144,106.7C192,128,240,128,288,138.7C336,149,384,171,432,165.3C480,160,528,128,576,128C624,128,672,160,720,176C768,192,816,192,864,213.3C912,235,960,277,1008,245.3C1056,213,1104,107,1152,80C1200,53,1248,107,1296,112C1344,117,1392,75,1416,53.3L1440,32L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z"></path>
         </svg>
-    </div>
+    </div> --}}
+    <livewire:components.footer  />
 </div>
 <style>
     @import url(//fonts.googleapis.com/css?family=Lato:300:400);
