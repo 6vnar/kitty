@@ -81,12 +81,14 @@
                     {{ $slot }}
                     @endisset
                 </div>
-                <!-- //fotter -->
-                <livew </div>
+                
+            </div>
 
 
             </div>
         </div>
+        <livewire:components.footer />
+
 
         @stack('modals')
         @livewireScripts
