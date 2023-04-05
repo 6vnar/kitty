@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 class sidebar extends Component
 {
     public $tabs;
+    public $langs;
+
     /**
      * Create a new component instance.
      *
@@ -15,9 +17,13 @@ class sidebar extends Component
      */
     public function __construct()
     {
+        $this->langs = [
+            'en' => 'English',
+            'ar' => 'عربي',
+        ];
         $this->tabs = [
             new Tab(
-                'Menu',
+                __('ui.Menu'),
                 [
                     new TabItem('Home', 'fa-solid fa-home', 'home'),
                     new TabItem('clothes', 'fa-solid fa-shirt', 'home'),
@@ -29,7 +35,7 @@ class sidebar extends Component
                 ]
             ),
             new Tab(
-                'Managements',
+                __('ui.Managements'),
                 [
                     new TabItem('Add product', 'fa-solid fa-circle-plus', 'home', true),
                     new TabItem('Add category', 'fa-solid fa-circle-plus','home', true),
@@ -38,18 +44,18 @@ class sidebar extends Component
                 true
             ),
             new Tab(
-                'Settings',
+                __('ui.Settings'),
                 [
                     new TabItem('Sign in', 'fa-solid fa-right-to-bracket', 'login', false),
                     new TabItem('Sign up', 'fa-solid fa-user-plus', 'register', false),
-                    new TabItem('Sign out', 'fa-solid fa-user-minus', 'logout-get', true),
+                    new TabItem('Sign out', 'fa-solid fa-user-minus', 'logout', true),
                 ]
             ),
         ];
         
         $this->tabs = collect($this->tabs);
         $this->tabs = $this->tabs->filter(function ($tab) {
-            if ($tab->forAdmin){
+            if ($tab->forAdmin) {
                 if (auth()->user())
                     return auth()->user()->is_admin;
                 else return false;

@@ -16,6 +16,10 @@ class Employee
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        if (auth()->user()->is_admin == 0) return $next($request);
+        else return abort(403);
     }
+    
+        // return $next($request);
+    
 }

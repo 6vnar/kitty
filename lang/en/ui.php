@@ -3,6 +3,8 @@
 //Englash Sentense File
 
 return [
+    'Menu' => 'Menu',
+    'Settings' =>'Settings',
 
     'task_system' => 'Task System',
     'add'         => 'Add',

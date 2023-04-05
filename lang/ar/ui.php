@@ -3,6 +3,8 @@
 //Aribc Sentense File
 
 return [
+    'Menu' => 'القائمة',
+    'Settings' =>'الاعدادات',
     'task_system' => 'نظام المهام',
     'add'         => 'إضافة',
     'create'      => 'إنشاء',

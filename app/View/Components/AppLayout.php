@@ -11,6 +11,16 @@ class AppLayout extends Component
      *
      * @return \Illuminate\View\View
      */
+    public $langs;
+
+    public function __construct()
+    {
+        $this->langs = [
+            'en' => 'English',
+            'ar' => 'عربي',
+        ];
+
+    }
     public function render()
     {
         return view('layouts.app');

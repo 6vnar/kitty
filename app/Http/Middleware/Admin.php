@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Middleware;
+use App\Providers\RouteServiceProvider;
 
 use Closure;
 use Illuminate\Http\Request;
@@ -19,4 +20,5 @@ class Admin
         if (auth()->user()->is_admin) return $next($request);
         else return abort(403);
     }
+    
 }

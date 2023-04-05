@@ -19,7 +19,7 @@ Route::get('change-language/{locale}', [MainController::class, 'changeLanguage']
 
 Route::get('/', Home::class)->name('home');
 
-Route::post('/register', [MainController::class, 'register'])->name('register');
-Route::post('/login', [MainController::class, 'login'])->name('login');
-Route::get('/logout', [MainController::class, 'logout'])->name('logout');
+// Route::post('/register', [MainController::class, 'register'])->name('register');
+// Route::post('/login', [MainController::class, 'login'])->name('login');
+// Route::get('/logout', [MainController::class, 'logout'])->name('logout');
 
