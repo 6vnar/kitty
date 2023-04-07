@@ -32,7 +32,7 @@
 
 
             @foreach ($tabs as $tab)
-            <div :class="sidebar_extended ? 'mb-5 ml-3 text-left' : 'mb-1 text-center text-sm'" class="@if (!$loop->first) mt-10 @endif text-gray-300">
+            <div :class="sidebar_extended ? 'mb-4 ml-3 text-left ' : 'mb-1 text-center '" class="@if (!$loop->first) mt-10 @endif  text-gray-300 @if (app()->getLocale() == 'ar') text-right @else text-left @endif">
                 {{ $tab->title }}
             </div>
             <ul class="space-y-2" :class="sidebar_extended ? 'ml-3' : ''">
@@ -40,8 +40,8 @@
                 
                 <li>
                     <a href="{{ route($item->route) }}" :data-tooltip-target="sidebar_extended ? '' : 'tooltip-default-{{ $item->route }}'" :class="sidebar_extended ? 'py-2' : 'justify-center py-3'" class="flex items-center px-4 text-base font-normal @if ($item->active) text-red-500 @else text-gray-900 @endif rounded-lg group hover:bg-gray-100 ">
-                        <i :class="sidebar_extended ? '' : 'text-lg'" class=" {{ $item->icon }}  @if ($item->active) text-red-500 group-hover:text-red-500 @else text-gray-500 group-hover:text-gray-900 @endif transition duration-75   "></i>
-                        <span class="ml-3" x-show="sidebar_extended">{{ $item->title }}</span>
+                        <i :class="sidebar_extended ? '' : ''" class=" {{ $item->icon }}  @if ($item->active) text-red-500 group-hover:text-red-500 @else text-gray-500 group-hover:text-gray-900 @endif transition duration-75 @if (app()->getLocale() == 'ar') ml-3 @else m-0  @endif   "></i>
+                        <span class="ml-3 text-sm" x-show="sidebar_extended" >{{ $item->title }}</span>
                     </a>
                     <div x-show="!sidebar_extended" id="tooltip-default-{{ $item->route }}" role="tooltip" class="inline-block absolute invisible z-10 py-2 px-3 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 transition-opacity duration-300 tooltip dark:bg-gray-700">
                         {{ $item->title }}
@@ -54,10 +54,10 @@
 
             @endforeach
             
-            <div class="flex flex-col items-center justify-center flex-none w-full basis-96 ">
+            <div class="flex flex-col justify-center flex-none w-full basis-96 ">
                     @if (app()->getLocale() == 'ar')
                     <x-jet-dropdown-link href="{{ route('change_locale', 'en') }}">
-                        <div class="text-gray-500 hover:text-gray-900  transition duration-75  px-2 text-lg   ">
+                        <div class=" mr-1  text-gray-500 hover:text-gray-900  transition duration-75   text-lg   ">
                             <i class="fa-solid fa-globe"></i>
                         </div>
                     </x-jet-dropdown-link>
@@ -65,17 +65,17 @@
 
                     <x-jet-dropdown-link href="{{ route('change_locale', 'ar') }}">
 
-                    <div class="@if ($item->active) text-red-500  @else  text-gray-500  hover:text-gray-900 @endif transition duration-75 rounded  hover:rounded-lg px-2 text-lg   ">
+                    <div class="ml-1 @if ($item->active)  text-red-500  @else  text-gray-500  hover:text-gray-900 @endif transition duration-75 rounded  hover:rounded-lg  text-lg   ">
                         <i class="fa-solid fa-globe"></i>
                     </div>
                     </x-jet-dropdown-link>
                     @endif
 
-                <button @click="sidebar_extended=!sidebar_extended" x-show="sidebar_extended" class="py-3 px-6 mt-10" text="Watch Together">
+                <button @click="sidebar_extended=!sidebar_extended" x-show="sidebar_extended" class="py-3 px-6 " text="Watch Together">
                     <i class="fas fa-arrow-left text-xl"></i>
                 </button>
 
-                <button @click="sidebar_extended=!sidebar_extended" x-show="!sidebar_extended" class="py-3 px-6 mt-10" text="Watch Together">
+                <button @click="sidebar_extended=!sidebar_extended" x-show="!sidebar_extended" class="py-3 px-6 " text="Watch Together">
                     <i class="fas fa-arrow-right text-xl"></i>
                 </button>
         </aside>

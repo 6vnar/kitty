@@ -25,30 +25,30 @@ class sidebar extends Component
             new Tab(
                 __('ui.Menu'),
                 [
-                    new TabItem('Home', 'fa-solid fa-home', 'home'),
-                    new TabItem('clothes', 'fa-solid fa-shirt', 'home'),
-                    new TabItem('makeup', 'fa-solid fa-eye','home'),
-                    new TabItem('accessories ', 'fa-solid fa-venus-mars', 'home'),
-                    new TabItem('shoes', 'fa-solid fa-home', 'home'),
-                    new TabItem('Favourites', 'fa-solid fa-heart', 'home', true),
+                    new TabItem(__('ui.home'), 'fa-solid fa-home', 'home'),
+                    new TabItem(__('ui.clothes'), 'fa-solid fa-shirt', 'home'),
+                    new TabItem(__('ui.makeup'), 'fa-solid fa-eye','home'),
+                    new TabItem(__('ui.accessories'), 'fa-solid fa-venus-mars', 'home'),
+                    new TabItem(__('ui.shoes'), 'fa-solid fa-home', 'home'),
+                    new TabItem(__('ui.Favourites'), 'fa-solid fa-heart', 'home', true),
 
                 ]
             ),
             new Tab(
                 __('ui.Managements'),
                 [
-                    new TabItem('Add product', 'fa-solid fa-circle-plus', 'home', true),
-                    new TabItem('Add category', 'fa-solid fa-circle-plus','home', true),
-                    new TabItem('Add brand', 'fa-solid fa-circle-plus','home', true),
+                    new TabItem(__('ui.Add-product'), 'fa-solid fa-circle-plus', 'home', true),
+                    new TabItem(__('ui.Add category'), 'fa-solid fa-circle-plus','home', true),
+                    new TabItem(__('ui.Add brand') ,'fa-solid fa-circle-plus','home', true),
                 ],
                 true
             ),
             new Tab(
                 __('ui.Settings'),
                 [
-                    new TabItem('Sign in', 'fa-solid fa-right-to-bracket', 'login', false),
-                    new TabItem('Sign up', 'fa-solid fa-user-plus', 'register', false),
-                    new TabItem('Sign out', 'fa-solid fa-user-minus', 'logout', true),
+                    new TabItem(__('ui.Sign in'), 'fa-solid fa-right-to-bracket', 'login', false),
+                    new TabItem(__('ui.Sign up'), 'fa-solid fa-user-plus', 'register', false),
+                    new TabItem(__('ui.log out'), 'fa-solid fa-user-minus', 'logout', true),
                 ]
             ),
         ];

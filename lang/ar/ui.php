@@ -5,6 +5,25 @@
 return [
     'Menu' => 'القائمة',
     'Settings' =>'الاعدادات',
+    'home' => 'الرئيسية',
+    'clothes' => 'ملابس',
+    'makeup' => 'مكياج',
+    'accessories' => 'اكسسوارات',
+    'shoes' => 'احذية',
+    'Favourites' => 'المفضلة',
+    'Managements' => 'الادارة',
+    'Sign in' => ' دخول',
+    'Sign up' => ' انضمام',
+    'Sign out' => 'تسجيل الخروج',
+    'Add product' => 'اضافة منتج',
+    'Add category' => 'اضافة قسم',
+    'Add brand' => 'اضافة ماركة',
+    'log out' => 'تسجيل خروج',
+
+
+
+
+
     'task_system' => 'نظام المهام',
     'add'         => 'إضافة',
     'create'      => 'إنشاء',

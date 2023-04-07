@@ -5,6 +5,24 @@
 return [
     'Menu' => 'Menu',
     'Settings' =>'Settings',
+    'home' => 'Home',
+    'clothes' => 'Clothes',
+    'makeup' => 'Makeup',
+    'accessories' => 'Accessories',
+    'shoes' => 'Shoes',
+    'Favourites' => 'Favourites',
+    'Managements' => 'Managements',
+    'Sign in' => 'Sign in',
+    'Sign up' => 'Sign up',
+    'Sign out' => 'Sign out',
+    'Add product' => 'Add product',
+    'Add category' => 'Add category',
+    'Add brand' => 'Add brand',
+    'log out' => 'Log out',
+    
+
+
+
 
     'task_system' => 'Task System',
     'add'         => 'Add',
