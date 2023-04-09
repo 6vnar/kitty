@@ -77,6 +77,7 @@ return [
     'prefix' => '',
 
     'domain' => null,
+    'path' => 'admin', // change admin to your preferred route.
 
     /*
     |--------------------------------------------------------------------------

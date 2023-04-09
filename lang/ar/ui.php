@@ -19,6 +19,8 @@ return [
     'Add category' => 'اضافة قسم',
     'Add brand' => 'اضافة ماركة',
     'log out' => 'تسجيل خروج',
+    'Messages' =>'الرسائل',
+    'Notifications' =>'الاشعارات',
 
 
 

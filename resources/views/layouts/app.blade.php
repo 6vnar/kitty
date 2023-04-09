@@ -29,7 +29,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
-<body class="font-sans tajawal  bg-secondary-100">
+<body class="font-sans tajawal  bg-secondary-100" dir="{{ config('app.locale') == 'en' ? 'ltr' : 'rtl' }}">
     <div class="p-0 mx-auto sm:p-6">
         <div class="flex flex-row  bg-white rounded-lg sm:h-main" x-data="{ sidebar_extended: false, showSideBar: false }" x-cloak>
             {{-- Left Sidebar --}}
@@ -73,6 +73,8 @@
 
 
             @livewireChartsScripts
+            @yield('script')
+
             <script src="{{ asset('vendor/livewire-alert/livewire-alert.js') }}"></script>
             <script src="https://cdn.tailwindcss.com"></script>
             <x-livewire-alert::flash />

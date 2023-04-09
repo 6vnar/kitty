@@ -38,7 +38,7 @@ return [
     | Jetstream Guard
     |--------------------------------------------------------------------------
     |
-    | Here you may specify the authentication guard Jetstream will use while
+    | Here you may specify the authentication  Jetstream will use while
     | authenticating users. This value should correspond with one of your
     | guards that is already present in your "auth" configuration file.
     |

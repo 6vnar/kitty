@@ -19,6 +19,8 @@ return [
     'Add category' => 'Add category',
     'Add brand' => 'Add brand',
     'log out' => 'Log out',
+    'Messages' =>'Messages',
+    'Notifications' =>'Notifications',
     
 
 
