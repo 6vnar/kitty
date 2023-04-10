@@ -36,25 +36,40 @@
             <livewire:components.side />
             {{-- Content --}}
             <div class="w-full pb-0 sm:pb-10 sm:w-8/12 sm:basis-8/12 sm:grow">
-                
+                <div class="flex flex-col lg:items-center justify-between p-5 border-b sm:h-20 sm:flex-row">
+                    <div class="flex justify-between mb-5">
+                        <span class="text-2xl font-semibold text-secondary-700">@yield('title')</span>
+                    </div>
+
+                    @yield('header-actions')
+                    <div class="flex flex-row items-center justify-between">
+                        <button @click="showSideBar=!showSideBar" type="button" class=" inline-flex items-center px-4 py-2 text-lg text-gray-400 bg-transparent rounded-lg sm:hidden hover:bg-gray-200 hover:text-gray-900 ">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        
+
+                        @hasSection('disable-search')
+                        @else
+
+                        @endif
+                    </div>
+                </div>
                 <div class="p-1 overflow-y-auto sm:p-5 h-content bg-secondary-50">
                     @isset($slot)
                     {{ $slot }}
                     @endisset
                 </div>
+                
             </div>
 
-            {{-- Right Sidebar --}}
-            {{-- @if (Route::is('home*') || Route::is('movies-all') || Route::is('series-all'))
-            @livewire('right-side')
-            @endif --}}
+
+            </div>
         </div>
-    </div>
 
-    @stack('modals')
-    @livewireScripts
-    @livewireChartsScripts
 
+        @stack('modals')
+        @livewireScripts
+        @livewireChartsScripts
             <script src="{{ asset('vendor/livewire-alert/livewire-alert.js') }}"></script>
             <script src="https://cdn.tailwindcss.com"></script>
             <x-livewire-alert::flash />
