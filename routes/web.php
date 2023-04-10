@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Livewire\Pages\{
-    Home\Main as Home,};
+    Home\Main as Home,
+    Product\Main as Product,};
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +19,9 @@ Route::get('change-language/{locale}', [MainController::class, 'changeLanguage']
 
 
 Route::get('/', Home::class)->name('home');
+// prodect main
+Route::get('/product', Product::class)->name('product');
+
 
 // Route::post('/register', [MainController::class, 'register'])->name('register');
 // Route::post('/login', [MainController::class, 'login'])->name('login');
