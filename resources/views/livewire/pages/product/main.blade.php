@@ -1,5 +1,5 @@
 <!-- component -->
-<div class=" flex flex-wrap items-center justify-center">
+<div class=" flex flex-wrap items-center justify-center gap-12">
     <!-- for loop  -->
     @for ($i = 0; $i < 30; $i++)
 

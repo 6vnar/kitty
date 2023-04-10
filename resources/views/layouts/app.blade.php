@@ -33,14 +33,21 @@
     <div class="p-0 mx-auto sm:p-6">
         <div class="flex flex-row h-screen bg-white rounded-lg sm:h-main" x-data="{ sidebar_extended: false, showSideBar: false }" x-cloak>
             {{-- Left Sidebar --}}
-            <livewire:components.side />
+            <x-sidebar />
             {{-- Content --}}
             <div class="w-full pb-0 sm:pb-10 sm:w-8/12 sm:basis-8/12 sm:grow">
                 <div class="flex flex-col lg:items-center justify-between p-5 border-b sm:h-20 sm:flex-row">
                     <div class="flex justify-between mb-5">
                         <span class="text-2xl font-semibold text-secondary-700">@yield('title')</span>
                     </div>
-
+                    <div @class([ ' sm:hidden flex flex-row absolute z-20 mt-24' , 'right-0'=> ar(),
+                        'left-0' => en(),
+                        ]) x-show="showSideBar">
+                        <nav @class([ 'bg-white shadow-lg h-screen border-white ' , ' pl-10 sm:pl-10'=> ar(),
+                            'pr-10 sm:pr-10' => en(),
+                            ])>
+                        </nav>
+                    </div>
                     @yield('header-actions')
                     <div class="flex flex-row items-center justify-between">
                         <button @click="showSideBar=!showSideBar" type="button" class=" inline-flex items-center px-4 py-2 text-lg text-gray-400 bg-transparent rounded-lg sm:hidden hover:bg-gray-200 hover:text-gray-900 ">
@@ -50,7 +57,9 @@
 
                         @hasSection('disable-search')
                         @else
-
+                        @if (Request::route()->getName() == 'home')
+                        @else
+                        @endif
                         @endif
                     </div>
                 </div>
@@ -59,20 +68,20 @@
                     {{ $slot }}
                     @endisset
                 </div>
-                
             </div>
 
-
-            </div>
+            {{-- Right Sidebar --}}
+            {{-- @if (Route::is('home*') || Route::is('movies-all') || Route::is('series-all'))
+            @livewire('right-side')
+            @endif --}}
         </div>
+    </div>
 
-
-        @stack('modals')
-        @livewireScripts
-        @livewireChartsScripts
-            <script src="{{ asset('vendor/livewire-alert/livewire-alert.js') }}"></script>
-            <script src="https://cdn.tailwindcss.com"></script>
-            <x-livewire-alert::flash />
+    @stack('modals')
+    @livewireScripts
+    @livewireChartsScripts
+    <script src="{{ asset('vendor/livewire-alert/livewire-alert.js') }}"></script>
+    <x-livewire-alert::flash />
 
 </body>
 
