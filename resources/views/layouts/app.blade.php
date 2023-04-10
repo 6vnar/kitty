@@ -33,8 +33,7 @@
     <div class="p-0 mx-auto sm:p-6">
         <div class="flex flex-row h-screen bg-white rounded-lg sm:h-main" x-data="{ sidebar_extended: false, showSideBar: false }" x-cloak>
             {{-- Left Sidebar --}}
-            <x-sidebar />
-
+            <livewire:components.side />
             {{-- Content --}}
             <div class="w-full pb-0 sm:pb-10 sm:w-8/12 sm:basis-8/12 sm:grow">
                 
