@@ -37,7 +37,7 @@ class sidebar extends Component
             new Tab(
                 __('ui.Managements'),
                 [
-                    new TabItem(__('ui.Add-product'), 'fa-solid fa-circle-plus', 'home', true),
+                    new TabItem(__('ui.Add product'), 'fa-solid fa-circle-plus', 'home', true),
                     new TabItem(__('ui.Add category'), 'fa-solid fa-circle-plus','home', true),
                     new TabItem(__('ui.Add brand') ,'fa-solid fa-circle-plus','home', true),
                 ],
@@ -46,9 +46,9 @@ class sidebar extends Component
             new Tab(
                 __('ui.Settings'),
                 [
-                    new TabItem(__('ui.Sign in'), 'fa-solid fa-right-to-bracket', 'login', false),
-                    new TabItem(__('ui.Sign up'), 'fa-solid fa-user-plus', 'register', false),
-                    new TabItem(__('ui.log out'), 'fa-solid fa-user-minus', 'logout', true),
+                    // new TabItem(__('ui.Sign in'), 'fa-solid fa-right-to-bracket', 'login', false),
+                    // new TabItem(__('ui.Sign up'), 'fa-solid fa-user-plus', 'register', false),
+                    // new TabItem(__('ui.log out'), 'fa-solid fa-user-minus', 'logout', true),
                 ]
             ),
         ];

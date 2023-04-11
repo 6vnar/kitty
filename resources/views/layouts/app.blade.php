@@ -31,7 +31,7 @@
 
 <body class="font-sans tajawal bg-secondary-800" dir="{{ config('app.locale') == 'en' ? 'ltr' : 'rtl' }}">
     <div class="p-0 mx-auto sm:p-6">
-        <div class="   flex flex-row h-content  rounded-lg sm:h-main" >
+        <div class="flex flex-row h-screen bg-white rounded-lg sm:h-main">
             {{-- Left Sidebar --}}
             <x-sidebar />
             {{-- Content --}}
@@ -40,16 +40,13 @@
                     <div class="flex justify-between mb-5">
                         <span class="text-2xl font-semibold text-secondary-700">@yield('title')</span>
                     </div>
-                    
                 </div>
-                <div class="p-1 overflow-y-auto sm:p-5 h-content ">
+                <div class="p-1 overflow-y-auto sm:p-5 h-content bg-secondary-50">
                     @isset($slot)
                     {{ $slot }}
                     @endisset
                 </div>
             </div>
-
-           
         </div>
     </div>
 

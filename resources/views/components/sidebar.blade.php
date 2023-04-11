@@ -83,9 +83,55 @@
 
                         <div class="p-3 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2" :class="(isSidebarOpen && currentSidebarTab == 'notificationsTab') ? 'text-white bg-[#fbdddf]' : 'text-gray-500 bg-white'">
                             <i class="fa-solid fa-globe w-5 h-5"></i>
+
                         </div>
                     </x-jet-dropdown-link>
                     @endif
+                    <!-- button login and sign up -->
+                    <!-- if guset -->
+
+
+
+
+
+
+
+                    
+                    
+                    @auth
+                    <button class="p-2 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2" :class="(isSidebarOpen && currentSidebarTab == 'messagesTab') ? 'text-white bg-[#fbdddf]' : 'text-gray-500 bg-white'">
+
+                        <form method="POST" action="{{ route('logout') }}" x-data>
+                            @csrf
+                            <a href="{{ route('logout') }}" @click.prevent="$root.submit();" class="hover:text-white ml-4 text-sm text-gray-700 underline" role="menuitem" tabindex="-1" id="user-menu-item-2"> <i class="fa-solid fa-user-minus w-5 h-5"></i>
+                            </a>
+                        </form>
+
+                    </button>
+                    @else 
+                    <a href="{{ url('/login') }}" class=" hover:text-whitetext-sm text-gray-700 underline"> <span class="sr-only">login</span>
+
+                    <button class="p-2 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2" :class="(isSidebarOpen && currentSidebarTab == 'messagesTab') ? 'text-white bg-[#fbdddf]' : 'text-gray-500 bg-white'">
+                            <i class="fa-solid fa-right-to-bracket w-5 hover:text-white p-1 h-5"></i>
+
+                    </button>
+                    </a>
+
+                    <a href="{{ route('register') }}" class="ml-4 hover:text-white text-sm text-gray-700 underline"><span class="sr-only">register</span>
+
+                    <button class="p-2 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2" :class="(isSidebarOpen && currentSidebarTab == 'messagesTab') ? 'text-white bg-[#fbdddf]' : 'text-gray-500 bg-white'">
+
+
+                            <i class="fa-solid fa-user-plus hover:text-white p-1 w-5 h-5"></i>
+                    </button>
+                    </a>
+
+                    @endauth
+
+
+
+
+
                 </div>
 
                 <!-- User avatar -->
@@ -167,7 +213,7 @@
                 </div>
             </div>
 
-            
+
             </header>
 
 
