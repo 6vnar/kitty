@@ -17,7 +17,7 @@ class ProductSeeder extends Seeder
           //id : 1
           Product::create([
             'id' => 1,
-            'name' => 'Nike Air Max 90 Essential',
+            'name' => 'shert',
             'description' => 'The Nike Air Max 90 Essential Men\'s Shoe is made with a mix of leather, synthetic leather and textile for a premium look and comfortable feel. The Max Air unit in the heel provides lightweight cushioning.',
             'price' => 50,
             'brand_id' => 1,

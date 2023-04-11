@@ -29,9 +29,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
-<body class="font-sans tajawal bg-secondary-100" dir="{{ config('app.locale') == 'en' ? 'ltr' : 'rtl' }}">
+<body class="font-sans tajawal bg-secondary-800" dir="{{ config('app.locale') == 'en' ? 'ltr' : 'rtl' }}">
     <div class="p-0 mx-auto sm:p-6">
-        <div class="flex flex-row h-screen bg-white rounded-lg sm:h-main" x-data="{ sidebar_extended: false, showSideBar: false }" x-cloak>
+        <div class="   flex flex-row h-content  rounded-lg sm:h-main" >
             {{-- Left Sidebar --}}
             <x-sidebar />
             {{-- Content --}}
@@ -40,40 +40,16 @@
                     <div class="flex justify-between mb-5">
                         <span class="text-2xl font-semibold text-secondary-700">@yield('title')</span>
                     </div>
-                    <div @class([ ' sm:hidden flex flex-row absolute z-20 mt-24' , 'right-0'=> ar(),
-                        'left-0' => en(),
-                        ]) x-show="showSideBar">
-                        <nav @class([ 'bg-white shadow-lg h-screen border-white ' , ' pl-10 sm:pl-10'=> ar(),
-                            'pr-10 sm:pr-10' => en(),
-                            ])>
-                        </nav>
-                    </div>
-                    @yield('header-actions')
-                    <div class="flex flex-row items-center justify-between">
-                        <button @click="showSideBar=!showSideBar" type="button" class=" inline-flex items-center px-4 py-2 text-lg text-gray-400 bg-transparent rounded-lg sm:hidden hover:bg-gray-200 hover:text-gray-900 ">
-                            <i class="fas fa-bars"></i>
-                        </button>
-                        
-
-                        @hasSection('disable-search')
-                        @else
-                        @if (Request::route()->getName() == 'home')
-                        @else
-                        @endif
-                        @endif
-                    </div>
+                    
                 </div>
-                <div class="p-1 overflow-y-auto sm:p-5 h-content bg-secondary-50">
+                <div class="p-1 overflow-y-auto sm:p-5 h-content ">
                     @isset($slot)
                     {{ $slot }}
                     @endisset
                 </div>
             </div>
 
-            {{-- Right Sidebar --}}
-            {{-- @if (Route::is('home*') || Route::is('movies-all') || Route::is('series-all'))
-            @livewire('right-side')
-            @endif --}}
+           
         </div>
     </div>
 
