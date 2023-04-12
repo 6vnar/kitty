@@ -33,7 +33,7 @@ class ProductSeeder extends Seeder
             'sale' => 0,
             'is_on_sale'=>true,
             'type'=>1,
-            'image_path' => 'https://www.nike.com/w/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/4b9b3b1a-1b1a-4b1c-9b1c-1b1a4b9b1a1b/nike-air-max-90-essential-shoe-1J1xJx.jpg'
+            'image_path' => 'https://fastly.picsum.photos/id/152/3888/2592.jpg?hmac=M1xv1MzO9xjf5-tz1hGR9bQpNt973ANkqfEVDW0-WYU'
         ]);
         //id : 2
         Product::create([
@@ -54,7 +54,7 @@ class ProductSeeder extends Seeder
             'sale' => 0,
             'is_on_sale'=>true,
             'type'=>1,
-            'image_path' => 'https://www.nike.com/w/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/4b9b3b1a-1b1a-4b1c-9b1c-1b1a4b9b1a1b/nike-air-max-90-essential-shoe-1J1xJx.jpg'
+            'image_path' => 'https://fastly.picsum.photos/id/152/3888/2592.jpg?hmac=M1xv1MzO9xjf5-tz1hGR9bQpNt973ANkqfEVDW0-WYU'
         ]);
         
 
