@@ -8,14 +8,20 @@ use App\Models\Product;
 class Main extends Component
 {
 
-    public function render()
-    {
-        $products = Product::all();
-        return view('livewire.pages.home.main',[
+    public $recentlyAdded;
+    public $mostSold;
 
-            'products' => $products,
-        ]);
+    public function mount()
+    {
+        $this->recentlyAdded = Product::orderBy('created_at', 'desc')->take(4)->get();
+        $this->mostSold = Product::orderBy('is_on_sale', 'desc')->take(4)->get();
     }
 
-    
+    public function render()
+    {
+        return view('livewire.pages.home.main', [
+            'recentlyAdded' => $this->recentlyAdded,
+            'mostSold' => $this->mostSold
+        ]);
+    }
 }
