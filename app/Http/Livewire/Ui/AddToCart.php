@@ -4,30 +4,18 @@ namespace App\Http\Livewire\Ui;
 
 use Livewire\Component;
 use App\Models\Product;
+use App\Models\Cart;
 
 class AddToCart extends Component
 {
-
-    public $product;
-
-    public function mount($product)
+    public function addToCart(Product $product)
     {
-        $this->product = $product;
+        Cart::add($product->id, $product->name, 1, $product->price)
+            ->associate('App\Models\Product');
+
+        return redirect()->back()->with('success', 'Product added to cart successfully!');
     }
 
-    public function addToCart()
-    {
-        // Code to add product to cart
-        // Cart::add([
-        //     'id' => $this->product->id,
-        //     'name' => $this->product->title,
-        //     'price' => $this->product->sale_price ? $this->product->sale_price : $this->product->price,
-        //     'qty' => 1
-        // ]);
-        session()->flash('success', 'Product added to cart!');
-        return redirect()->route('home');
-    }
-    
     public function render()
     {
         return view('livewire.ui.add-to-cart');

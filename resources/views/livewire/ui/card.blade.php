@@ -1,21 +1,15 @@
 <div>
- <div class="bg-white shadow-lg rounded-lg p-4">
-    <img src="{{ $product->image }}" alt="{{ $product->title }}" class="w-full object-cover object-center">
-    <div class="mt-4">
-        <h3 class="text-gray-500 text-xs uppercase font-medium">{{ $product->category->name }}</h3>
-        <h2 class="text-gray-900 title-font text-lg font-medium">{{ $product->name }}</h2>
-        <p class="mt-1">{{ $product->description }}</p>
-        <div class="flex justify-between items-center mt-4">
-            @if($product->sale_price)
-                <div class="text-gray-500 text-sm">
-                    <span class="line-through">{{ $product->price }}</span> {{ $product->sale_price }}
-                </div>
-            @else
-                <div class="text-gray-500 text-sm">{{ $product->price }}</div>
-            @endif
-            <button wire:click.prevent="addToCart({{ $product->id }})" class="bg-pink-500 text-white rounded-md px-4 py-2 hover:bg-pink-600">Add to Cart</button>
+    <div class="bg-white rounded-lg shadow-lg">
+        <img src="{{ $product->image_path }}" alt="{{ $product->name }}" class="h-48 w-full object-cover rounded-t-lg">
+        <div class="p-4">
+            <h2 class="font-bold text-lg">{{ $product->name }}</h2>
+            <p class="text-gray-500">{{ $product->description }}</p>
+            <div class="mt-4 flex justify-between items-center">
+                <span class="text-gray-700 font-bold">${{ $product->price }}</span>
+                <a href="{{ route('show_product', $product->id) }}" class ="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded">View</a>
+            </div>
         </div>
     </div>
-</div>
+    
     
 </div>

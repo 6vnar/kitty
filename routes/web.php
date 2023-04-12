@@ -4,7 +4,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Livewire\Pages\{
     Home\Main as Home,
-    Product\Main as Product,};
+    Product\Main as Product,
+    Product\ShowProduct,
+};
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +25,9 @@ Route::get('change-language/{locale}', [MainController::class, 'changeLanguage']
 Route::get('/', Home::class)->name('home');
 // prodect main
 Route::get('/product', Product::class)->name('product');
+// show product
+Route::get('/product/{id}', ShowProduct::class)->name('show_product');
+Route::post('/add-to-cart/{product}', [CartController::class, 'addToCart'])->name('cart.add');
 
 
 // Route::post('/register', [MainController::class, 'register'])->name('register');
