@@ -1116,6 +1116,9 @@ select {
 .z-50 {
   z-index: 50;
 }
+.col-span-1 {
+  grid-column: span 1 / span 1;
+}
 .col-span-6 {
   grid-column: span 6 / span 6;
 }
@@ -1125,6 +1128,10 @@ select {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 .-mb-1 {
   margin-bottom: -0.25rem;
@@ -1152,9 +1159,6 @@ select {
 }
 .-mt-px {
   margin-top: -1px;
-}
-.mb-2 {
-  margin-bottom: 0.5rem;
 }
 .mb-4 {
   margin-bottom: 1rem;
@@ -1234,6 +1238,9 @@ select {
 .inline-flex {
   display: inline-flex;
 }
+.table {
+  display: table;
+}
 .grid {
   display: grid;
 }
@@ -1288,6 +1295,9 @@ select {
 .w-0 {
   width: 0px;
 }
+.w-1\/12 {
+  width: 8.333333%;
+}
 .w-1\/2 {
   width: 50%;
 }
@@ -1299,6 +1309,9 @@ select {
 }
 .w-16 {
   width: 4rem;
+}
+.w-2\/12 {
+  width: 16.666667%;
 }
 .w-20 {
   width: 5rem;
@@ -1342,9 +1355,6 @@ select {
 .min-w-0 {
   min-width: 0px;
 }
-.max-w-2xl {
-  max-width: 42rem;
-}
 .max-w-6xl {
   max-width: 72rem;
 }
@@ -1368,6 +1378,12 @@ select {
 }
 .shrink-0 {
   flex-shrink: 0;
+}
+.basis-1\/12 {
+  flex-basis: 8.333333%;
+}
+.basis-2\/12 {
+  flex-basis: 16.666667%;
 }
 .origin-bottom-left {
   transform-origin: bottom left;
@@ -1478,6 +1494,9 @@ select {
 }
 .gap-1 {
   gap: 0.25rem;
+}
+.gap-10 {
+  gap: 2.5rem;
 }
 .gap-12 {
   gap: 3rem;
@@ -1888,6 +1907,10 @@ select {
   font-size: 1.5rem;
   line-height: 2rem;
 }
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
@@ -2010,10 +2033,6 @@ select {
 .text-pink-300 {
   --tw-text-opacity: 1;
   color: rgb(251 151 172 / var(--tw-text-opacity));
-}
-.text-pink-500 {
-  --tw-text-opacity: 1;
-  color: rgb(108 111 191 / var(--tw-text-opacity));
 }
 .text-red-500 {
   --tw-text-opacity: 1;
@@ -2644,10 +2663,6 @@ select {
     grid-column: span 2 / span 2;
   }
 
-  .md\:mb-0 {
-    margin-bottom: 0px;
-  }
-
   .md\:mt-0 {
     margin-top: 0px;
   }
@@ -2666,10 +2681,6 @@ select {
 
   .md\:hidden {
     display: none;
-  }
-
-  .md\:w-1\/2 {
-    width: 50%;
   }
 
   .md\:grid-cols-2 {

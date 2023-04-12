@@ -1,5 +1,5 @@
 <div>
-    
+    @section('title', 'Product Details')
     <div class="container mx-auto my-10">
         <div class="grid grid-cols-2 gap-10">
             <div class="col-span-1">

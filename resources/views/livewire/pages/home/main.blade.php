@@ -1,4 +1,5 @@
 <div>
+    @section('title', 'Home')
     <!-- if auth -->
     @auth
         gggggggg
