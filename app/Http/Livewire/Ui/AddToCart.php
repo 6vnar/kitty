@@ -8,13 +8,8 @@ use App\Models\Cart;
 
 class AddToCart extends Component
 {
-    public function addToCart(Product $product)
-    {
-        Cart::add($product->id, $product->name, 1, $product->price)
-            ->associate('App\Models\Product');
+    protected $listeners = ['cartUpdated'];
 
-        return redirect()->back()->with('success', 'Product added to cart successfully!');
-    }
 
     public function render()
     {

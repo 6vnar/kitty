@@ -7,7 +7,8 @@ use App\Http\Livewire\Pages\{
     Product\Main as Product,
     Product\ShowProduct,
 };
-
+//path to AddToCart
+use App\Http\Livewire\Ui\AddToCart as CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,7 @@ Route::get('/', Home::class)->name('home');
 Route::get('/product', Product::class)->name('product');
 // show product
 Route::get('/product/{id}', ShowProduct::class)->name('show_product');
-Route::post('/add-to-cart/{product}', [CartController::class, 'addToCart'])->name('cart.add');
+Route::get('/add-to-cart', CartController::class)->name('cart.add');
 
 
 // Route::post('/register', [MainController::class, 'register'])->name('register');

@@ -116,7 +116,7 @@
                         <!-- Logo -->
                         <div class="flex items-center justify-center flex-shrink-0 py-10">
                             <!-- <a href="#">
-                          
+
                             <img class="w-24 h-auto" src="https://raw.githubusercontent.com/kamona-ui/dashboard-alpine/main/public/assets/images/logo.png" alt="K-UI" />
                         </a> -->
                             <a href="{{ route('home') }}" class="flex items-center justify-center p-2 text-base text-gray text-[#fb97ac] rounded-lg">

@@ -7,7 +7,7 @@ use App\Models\Product;
 
 class Main extends Component
 {
-   
+
     public function render()
     {
         $products = Product::all();
