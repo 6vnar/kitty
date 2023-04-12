@@ -1,4 +1,4 @@
-<div class=" flex flex-wrap items-center justify-center gap-12">
+{{-- <div class=" flex flex-wrap items-center justify-center gap-12">
     @foreach ($products as $product)
     <div class="flex-shrink-0 m-6 relative overflow-hidden bg-[#fb97ac] rounded-lg max-w-xs shadow-lg">
         <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none" style="transform: scale(1.5); opacity: 0.1;">
@@ -18,4 +18,4 @@
         </div>
     </div>
     @endforeach
-</div>
+</div> --}}

@@ -7,11 +7,11 @@ use App\Models\Product;
 
 class Main extends Component
 {
-    public $products;
+    // public $products;
     public function render()
     {
         //get proudect with brand name
-        $this->products = Product::with('brand')->get();
+        // $this->products = Product::with('brand')->get();
         return view('livewire.pages.product.main' );
     }
 }

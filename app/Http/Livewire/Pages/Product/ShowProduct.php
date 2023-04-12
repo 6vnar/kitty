@@ -9,18 +9,19 @@ use Illuminate\Console\View\Components\Alert;
 use Illuminate\Support\Facades\Auth;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 
-
 class ShowProduct extends Component
 {
     use LivewireAlert;
     protected $listeners = ['cartUpdated', 'addToCart', 'confirmAdd','refresh'];
-
     public $product, $product_id;
+
 
     public function mount($id)
     {
         $this->product = Product::findOrFail($id);
     }
+
+
     //add to cart function
     public function addToCart()
     {
@@ -65,6 +66,8 @@ class ShowProduct extends Component
             'toast' => true,
         ]);
     }
+
+
     //remove from cart function
     public function removeFromCart($id)
     {

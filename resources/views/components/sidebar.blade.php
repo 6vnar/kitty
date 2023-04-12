@@ -176,7 +176,7 @@
 
                     @endauth
 
-                    @auth
+                    {{-- @auth
                     <a href="{{ route('register') }}"
                     <button
                         @click="(isSidebarOpen && currentSidebarTab == 'messagesTab') ? isSidebarOpen = false : isSidebarOpen = true; currentSidebarTab = 'messagesTab'"
@@ -187,16 +187,12 @@
                         <i class="fa-solid fa-heart hover:text-white p-1 w-5 h-5"></i>
                     </button>
                 </a>
-                    @endauth
+                    @endauth --}}
 
                     @auth
                     <a href="{{ route('cart.add') }}"
-                    <button
-                        @click="(isSidebarOpen && currentSidebarTab == 'messagesTab') ? isSidebarOpen = false : isSidebarOpen = true; currentSidebarTab = 'messagesTab'"
-                        class="p-2 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2"
-                        :class="(isSidebarOpen && currentSidebarTab == 'messagesTab') ? 'text-white bg-[#fbdddf]' :
-                        'text-gray-500 bg-white'">
-                        <span class="sr-only">Toggle message panel</span>
+                    <button class="p-2 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2"
+                        class='text-gray-500 bg-white'>
                         <i class="fa-solid fa-cart-shopping hover:text-white p-1 w-5 h-5"></i>
                     </button>
                 </a>

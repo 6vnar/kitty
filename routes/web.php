@@ -6,8 +6,13 @@ use App\Http\Livewire\Pages\{
     Home\Main as Home,
     Product\Main as Product,
     Product\ShowProduct,
+    Product\Clothes,
+    Product\Shoes,
+    Product\Accessories,
+    Product\Makeup,
+    product\Favourite
 };
-//path to AddToCart
+
 use App\Http\Livewire\Ui\AddToCart as CartController;
 
 /*
@@ -24,11 +29,15 @@ Route::get('change-language/{locale}', [MainController::class, 'changeLanguage']
 
 
 Route::get('/', Home::class)->name('home');
-// prodect main
+// product group
 Route::get('/product', Product::class)->name('product');
-// show product
 Route::get('/product/{id}', ShowProduct::class)->name('show_product');
 Route::get('/add-to-cart', CartController::class)->name('cart.add');
+Route::get('/clothes', Clothes::class)->name('clothes');
+Route::get('/shoes', Shoes::class)->name('shoes');
+Route::get('/accessories', Accessories::class)->name('accessories');
+Route::get('/makeup', Makeup::class)->name('makeup');
+Route::get('/favourite', Favourite::class)->name('favourite');
 
 
 // Route::post('/register', [MainController::class, 'register'])->name('register');

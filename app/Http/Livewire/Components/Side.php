@@ -26,7 +26,7 @@ class Side extends Component
                 __('ui.Menu'),
                 [
                     new TabItem(__('ui.home'), 'fa-solid fa-home', 'home'),
-                    new TabItem(__('ui.clothes'), 'fa-solid fa-shirt', 'product'),
+                    new TabItem(__('ui.clothes'), 'fa-solid fa-shirt', 'clothes'),
                     new TabItem(__('ui.makeup'), 'fa-solid fa-eye','home'),
                     new TabItem(__('ui.accessories'), 'fa-solid fa-venus-mars', 'home'),
                     new TabItem(__('ui.shoes'), 'fa-solid fa-home', 'home'),
