@@ -30,7 +30,7 @@ class Side extends Component
                     new TabItem(__('ui.makeup'), 'fa-solid fa-eye','home'),
                     new TabItem(__('ui.accessories'), 'fa-solid fa-venus-mars', 'home'),
                     new TabItem(__('ui.shoes'), 'fa-solid fa-home', 'home'),
-                    new TabItem(__('ui.Favourites'), 'fa-solid fa-heart', 'home', true),
+                    // new TabItem(__('ui.Favourites'), 'fa-solid fa-heart', 'home', true),
 
                 ]
             ),
