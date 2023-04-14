@@ -21,7 +21,16 @@ return [
     'log out' => 'تسجيل خروج',
     'Messages' =>'الرسائل',
     'Notifications' =>'الاشعارات',
-
+    'Shopping Cart' =>' عربة التسوق',
+    'Product Name' => ' اسم المنتج',
+    'Product' =>' منتج ',
+    'Price' =>'سعر ',
+    'Quantity' =>'الكمية ',
+    'Subtotal' =>'المجموع الفرعي',
+    'Checkout' =>'الدفع',
+    'Recently Added' =>' تمت اضافته موخرا',
+    'Most Sold' =>' الاكثر مبيعا ',
+    '24h' => 'خدمة توصيل على مدار٢٤ساعه ',
 
 
 

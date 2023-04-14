@@ -21,7 +21,16 @@ return [
     'log out' => 'Log out',
     'Messages' =>'Messages',
     'Notifications' =>'Notifications',
-    
+    'Shopping Cart' => 'Shopping Cart',
+    'Product Name' => 'Product Name',
+    'Product' =>'Product',
+    'Price' => 'Price',
+    'Quantity' => 'Quantity',
+    'Subtotal' => 'Subtotal',
+    'Checkout' =>'Checkout',
+    'Recently Added' =>'Recently Added',
+    'Most Sold' =>'Most Sold',
+    '24h' => 'Delivery service 24 hours a day',
 
 
 

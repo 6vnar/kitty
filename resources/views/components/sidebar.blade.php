@@ -1,5 +1,5 @@
 <!-- component -->
-<div class="p-6 border-r" :class="sidebar_extended ? 'basis-2/12 w-2/12' : 'basis-1/12 w-1/12'" x-data="setup()"
+<div class="p-6  @if (app()->getLocale() == 'ar') border-l @else border-r @endif " :class="sidebar_extended ? 'basis-2/12 w-2/12' : 'basis-1/12 w-1/12'" x-data="setup()"
     x-init="$refs.loading.classList.add('hidden');" @resize.window="watchScreen()">
     <div class="  flex h-[850px]  antialiased text-gray-900  dark:bg-dark dark:text-light">
         <!-- Loading screen -->
@@ -111,6 +111,14 @@
                                 d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                         </svg>
                     </button>
+                    @auth
+                    <a href="{{ route('cart.add') }}"
+                    <button class="p-2 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2"
+                        class='text-gray-500 bg-white'>
+                        <i class="fa-solid fa-cart-shopping hover:text-white p-1 w-5 h-5"></i>
+                    </button>
+                </a>
+                    @endauth
                     @if (app()->getLocale() == 'ar')
                         <x-jet-dropdown-link href="{{ route('change_locale', 'en') }}">
                             <div class="p-3 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2"
@@ -189,14 +197,7 @@
                 </a>
                     @endauth --}}
 
-                    @auth
-                    <a href="{{ route('cart.add') }}"
-                    <button class="p-2 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2"
-                        class='text-gray-500 bg-white'>
-                        <i class="fa-solid fa-cart-shopping hover:text-white p-1 w-5 h-5"></i>
-                    </button>
-                </a>
-                    @endauth
+                    
 
                 </div>
 
@@ -274,7 +275,7 @@
                     <div class="hidden p-2 space-y-6 rounded-lg md:block">
                         <img aria-hidden="true" class="-mt-10" src="{{ asset('images/side/side3.jpg') }}" />
                         <p class="text-sm text-[#fbdddf]">
-                            Use our <span class="text-base text-[#fb97ac]er">Premium</span> features now! <br />
+                             <span class="text-base text-[#fb97ac]er">{{ __('ui.24h') }}</span>  <br />
                         </p>
                         <button
                             class="w-full px-4 py-2 text-center text-white transition-colors bg-[#fbdddf] rounded-lg hover:bg-[#fb97ac] focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-2 focus:ring-offset-gray-100">
