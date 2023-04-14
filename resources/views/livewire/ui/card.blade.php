@@ -38,7 +38,7 @@
             </div>
             <div class="relative text-white px-6 pb-6 mt-6">
                 <a href="{{ route('show_product', $product->id) }}"
-                    class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded">View</a>
+                    class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded">{{ __('ui.View') }}</a>
             </div>
         </div>
     </div>

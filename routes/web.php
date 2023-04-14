@@ -38,9 +38,3 @@ Route::get('/shoes', Shoes::class)->name('shoes');
 Route::get('/accessories', Accessories::class)->name('accessories');
 Route::get('/makeup', Makeup::class)->name('makeup');
 Route::get('/favourite', Favourite::class)->name('favourite');
-
-
-// Route::post('/register', [MainController::class, 'register'])->name('register');
-// Route::post('/login', [MainController::class, 'login'])->name('login');
-// Route::get('/logout', [MainController::class, 'logout'])->name('logout');
-

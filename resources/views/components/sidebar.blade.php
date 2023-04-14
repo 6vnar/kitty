@@ -1,5 +1,5 @@
 <!-- component -->
-<div class="p-6  @if (app()->getLocale() == 'ar') border-l @else border-r @endif " :class="sidebar_extended ? 'basis-2/12 w-2/12' : 'basis-1/12 w-1/12'" x-data="setup()"
+<div class="p-6  @if (app()->getLocale() == 'ar') border-l @else border-r @endif h-screen " :class="sidebar_extended ? 'basis-2/12 w-2/12' : 'basis-1/12 w-1/12'" x-data="setup()"
     x-init="$refs.loading.classList.add('hidden');" @resize.window="watchScreen()">
     <div class="  flex h-[850px]  antialiased text-gray-900  dark:bg-dark dark:text-light">
         <!-- Loading screen -->
@@ -170,7 +170,7 @@
                         </a>
 
                         <a href="{{ route('register') }}"
-                            class="ml-4 hover:text-white text-sm text-gray-700 underline"><span
+                            class=" hover:text-white text-sm text-gray-700 underline"><span
                                 class="sr-only">register</span>
 
                             <button
@@ -277,16 +277,15 @@
                         <p class="text-sm text-[#fbdddf]">
                              <span class="text-base text-[#fb97ac]er">{{ __('ui.24h') }}</span>  <br />
                         </p>
+                        <a href="{{ route('cart.add') }}">
                         <button
                             class="w-full px-4 py-2 text-center text-white transition-colors bg-[#fbdddf] rounded-lg hover:bg-[#fb97ac] focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-2 focus:ring-offset-gray-100">
-                            Upgrade to pro
+                            {{ __('ui.order now') }}
                         </button>
+                        </a>
                     </div>
 
-                    <button
-                        class="w-full px-4 py-2 text-center text-white transition-colors bg-[#fbdddf] rounded-lg md:hidden hover:bg-[#fb97ac] focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-2 focus:ring-offset-gray-100">
-                        Upgrade to pro
-                    </button>
+                    
                 </div>
             </nav>
 

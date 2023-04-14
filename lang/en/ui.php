@@ -31,6 +31,8 @@ return [
     'Recently Added' =>'Recently Added',
     'Most Sold' =>'Most Sold',
     '24h' => 'Delivery service 24 hours a day',
+    'order now' => 'Order Now !',
+    'View' => 'View',
 
 
 
