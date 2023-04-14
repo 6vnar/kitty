@@ -23,7 +23,7 @@
     <script src="https://kit.fontawesome.com/4e8940f861.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
-<body class="font-sans tajawal bg-secondary-800" dir="{{ config('app.locale') == 'en' ? 'ltr' : 'rtl' }}">
+<body class="font-sans overflow-x-hidden tajawal bg-secondary-800" dir="{{ config('app.locale') == 'en' ? 'ltr' : 'rtl' }}">
     <div class="p-0 overflow-y-hidden h-screen mx-auto ">
         <div class="flex flex-row  h-screen bg-white  sm:h-main">
             {{-- Left Sidebar --}}
@@ -35,7 +35,7 @@
                         <span class="text-2xl font-semibold text-secondary-700">@yield('title')</span>
                     </div>
                 </div>
-                <div class="p-1  overflow-y-auto  rounded-lg h-screen sm:p-5  bg-secondary-50">
+                <div class="p-1  pb-10  overflow-y-auto  rounded-lg h-screen sm:p-5  bg-secondary-50">
                     @isset($slot)
                     {{ $slot }}
                     @endisset
