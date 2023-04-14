@@ -273,8 +273,8 @@
 
                 <div class="flex-shrink-0 p-4 mt-10">
                     <div class="hidden p-2 space-y-6 rounded-lg md:block">
-                        <img aria-hidden="true" class="-mt-10" src="{{ asset('images/side/side3.jpg') }}" />
-                        <p class="text-sm text-[#fbdddf]">
+                        <img aria-hidden="true" class="-mt-10 " src="{{ asset('images/side/side3.jpg') }}" />
+                        <p class="text-sm pb-6 text-[#fbdddf] ">
                              <span class="text-base text-[#fb97ac]er">{{ __('ui.24h') }}</span>  <br />
                         </p>
                         <a href="{{ route('cart.add') }}">
