@@ -13,8 +13,8 @@ class Main extends Component
 
     public function mount()
     {
-        $this->recentlyAdded = Product::orderBy('created_at', 'desc')->take(4)->get();
-        $this->mostSold = Product::orderBy('is_on_sale', 'desc')->take(4)->get();
+        $this->recentlyAdded = Product::orderBy('created_at', 'desc')->take(5)->get();
+        $this->mostSold = Product::orderBy('is_on_sale', 'desc')->take(5)->get();
     }
 
     public function render()

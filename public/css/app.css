@@ -1259,6 +1259,9 @@ select {
 .h-20 {
   height: 5rem;
 }
+.h-36 {
+  height: 9rem;
+}
 .h-4 {
   height: 1rem;
 }
@@ -1321,6 +1324,9 @@ select {
 }
 .w-3\/4 {
   width: 75%;
+}
+.w-36 {
+  width: 9rem;
 }
 .w-4 {
   width: 1rem;
@@ -1501,6 +1507,9 @@ select {
 .gap-12 {
   gap: 3rem;
 }
+.gap-2 {
+  gap: 0.5rem;
+}
 .gap-4 {
   gap: 1rem;
 }
@@ -1551,6 +1560,9 @@ select {
 .overflow-y-auto {
   overflow-y: auto;
 }
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
 .overflow-y-hidden {
   overflow-y: hidden;
 }
@@ -1597,10 +1609,6 @@ select {
 .rounded-t-3xl {
   border-top-left-radius: 1.5rem;
   border-top-right-radius: 1.5rem;
-}
-.rounded-t-lg {
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
 }
 .rounded-t-none {
   border-top-left-radius: 0px;
@@ -1845,6 +1853,9 @@ select {
 }
 .pb-1 {
   padding-bottom: 0.25rem;
+}
+.pb-10 {
+  padding-bottom: 2.5rem;
 }
 .pb-3 {
   padding-bottom: 0.75rem;
@@ -2686,6 +2697,10 @@ select {
 
   .md\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .md\:items-center {
