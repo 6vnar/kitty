@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <!-- end swiper -->
     <!-- aso -->
-    
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- end -->
     <!-- Scripts -->
@@ -43,11 +43,11 @@
                         <span class="text-2xl font-semibold text-secondary-700">@yield('title')</span>
                     </div>
                 </div>
-                <div class="p-1  pb-10  overflow-y-auto  rounded-lg h-screen sm:p-5  bg-secondary-50">
+                <main class="p-1  pb-10  overflow-y-auto  rounded-lg h-screen sm:p-5  bg-secondary-50">
                     @isset($slot)
                     {{ $slot }}
                     @endisset
-                </div>
+                </main>
             </div>
         </div>
     </div>
@@ -82,8 +82,8 @@
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
-            
-        
+
+
         });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
