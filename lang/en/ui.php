@@ -33,6 +33,7 @@ return [
     '24h' => 'Delivery service 24 hours a day',
     'order now' => 'Order Now !',
     'View' => 'View',
+    'Add Brand' => 'Add Brand',
 
 
 

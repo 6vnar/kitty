@@ -5,13 +5,20 @@ use App\Http\Controllers\MainController;
 use App\Http\Livewire\Pages\{
     Home\Main as Home,
     Product\Main as Product,
-    Product\ShowProduct,
-    Product\Clothes,
-    Product\Shoes,
-    Product\Accessories,
-    Product\Makeup,
-    product\Favourite
+    Brand\Main as Brand,
 };
+use App\Http\Livewire\Pages\Product\{
+    ShowProduct as ShowProduct,
+    Clothes as Clothes ,
+    Shoes as Shoes,
+    Accessories as Accessories,
+    Makeup as Makeup,
+    Favourite as Favourite,
+};
+use App\Http\Livewire\Pages\Brand\{
+    Admin\Add as BrandAdd,
+};
+
 
 use App\Http\Livewire\Ui\AddToCart as CartController;
 
@@ -38,3 +45,9 @@ Route::get('/shoes', Shoes::class)->name('shoes');
 Route::get('/accessories', Accessories::class)->name('accessories');
 Route::get('/makeup', Makeup::class)->name('makeup');
 Route::get('/favourite', Favourite::class)->name('favourite');
+// brand group
+Route::get('/brand', Brand::class)->name('brand');
+Route::get('/brand/add', BrandAdd::class)->name('brand.add');
+
+
+

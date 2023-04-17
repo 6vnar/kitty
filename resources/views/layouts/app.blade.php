@@ -70,10 +70,13 @@
         var swiper = new Swiper(".mySwiper", {
             spaceBetween: 20,
             centeredSlides: true,
+            speed: 3000,
+            loop: true,
             autoplay: {
                 delay: 3000,
                 disableOnInteraction: false,
-            },
+                
+                            },
             // pagination: {
             //     el: ".swiper-pagination",
             //     clickable: true,

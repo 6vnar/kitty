@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 class sidebar extends Component
 {
     public $tabs;
+    public $admins;
+
     public $langs;
 
     /**
@@ -34,28 +36,24 @@ class sidebar extends Component
 
                 ]
             ),
+            
+        ];
+        $this->admins = [
             new Tab(
                 __('ui.Managements'),
                 [
                     new TabItem(__('ui.Add product'), 'fa-solid fa-circle-plus', 'home', true),
                     new TabItem(__('ui.Add category'), 'fa-solid fa-circle-plus','home', true),
-                    new TabItem(__('ui.Add brand') ,'fa-solid fa-circle-plus','home', true),
+                    new TabItem(__('ui.Add brand') ,'fa-solid fa-circle-plus','brand.add', true),
                 ],
                 true
             ),
-            new Tab(
-                __('ui.Settings'),
-                [
-                    // new TabItem(__('ui.Sign in'), 'fa-solid fa-right-to-bracket', 'login', false),
-                    // new TabItem(__('ui.Sign up'), 'fa-solid fa-user-plus', 'register', false),
-                    // new TabItem(__('ui.log out'), 'fa-solid fa-user-minus', 'logout', true),
-                ]
-            ),
         ];
         
-        $this->tabs = collect($this->tabs);
-        $this->tabs = $this->tabs->filter(function ($tab) {
-            if ($tab->forAdmin) {
+        
+        $this->admins = collect($this->admins);
+        $this->admins = $this->admins->filter(function ($admin) {
+            if ($admin->forAdmin) {
                 if (auth()->user())
                     return auth()->user()->is_admin;
                 else return false;
