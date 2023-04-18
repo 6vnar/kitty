@@ -17,7 +17,6 @@ return [
     'Sign out' => 'Sign out',
     'Add product' => 'Add product',
     'Add category' => 'Add category',
-    'Add brand' => 'Add brand',
     'log out' => 'Log out',
     'Messages' =>'Messages',
     'Notifications' =>'Notifications',
@@ -34,6 +33,10 @@ return [
     'order now' => 'Order Now !',
     'View' => 'View',
     'Add Brand' => 'Add Brand',
+    'Add' => 'Add',
+    'Brand Name' => 'Brand Name',
+    'Description' => 'Description',
+    'Select Image' => 'Select Image',
 
 
 

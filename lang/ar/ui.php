@@ -17,7 +17,6 @@ return [
     'Sign out' => 'تسجيل الخروج',
     'Add product' => 'اضافة منتج',
     'Add category' => 'اضافة قسم',
-    'Add brand' => 'اضافة ماركة',
     'log out' => 'تسجيل خروج',
     'Messages' =>'الرسائل',
     'Notifications' =>'الاشعارات',
@@ -34,6 +33,11 @@ return [
     'order now' => ' اطلب الان !',
     'View' => ' عرض ',
     'Add Brand' => 'اضافة العلامة التجارية',
+    'Add' => 'اضافة',
+    'Brand Name' => 'اسم العلامة التجارية',
+    'Description' => 'الوصف',
+    'Select Image' => 'اختر صورة',
+
 
 
 
