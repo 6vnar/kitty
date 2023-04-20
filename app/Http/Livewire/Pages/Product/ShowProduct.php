@@ -34,11 +34,13 @@ class ShowProduct extends Component
             $cart = new Cart();
             // $cart->user_id = Auth::user()->id;
             $cart->id = $this->product_id->id;
-           
-           
-            $cart->products()->attach($this->product_id->id);
+            $cart->quantity = 1;
+            $cart->price = $this->product_id->price;
             $cart->save();
         }
+        
+        // add product to cart_product table
+        $cart->products()->attach($this->product_id->id);
         $this->alert('success', 'Product added to cart successfully!', [
             'position' => 'top',
             'timer' => 3000,
@@ -46,6 +48,7 @@ class ShowProduct extends Component
         ]);
         $this->emitUp('$refresh');
         return redirect()->to('/product/' . $this->product_id->id);
+   
     }
     // //add to cart function
     // public function addToCart()
