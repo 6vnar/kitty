@@ -11,19 +11,13 @@ class AddToCart extends Component
     protected $listeners = ['cartUpdated'];
 
 
-    public $cartItems = [];
-
-    public function mount()
-    {
-        //get cart items
-        $this->cartItems = Cart::with('product')->get();
-        // dd($this->cartItems);
-    }
 
 
 
     public function render()
     {
-        return view('livewire.ui.add-to-cart');
+        $carts = Cart::with('products')->get();
+        
+        return view('livewire.ui.add-to-cart', compact('carts'));
     }
 }
