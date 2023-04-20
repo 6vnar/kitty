@@ -38,7 +38,7 @@ class ShowProduct extends Component
             $cart->price = $this->product_id->price;
             $cart->save();
         }
-        
+
         // add product to cart_product table
         $cart->products()->attach($this->product_id->id);
         $this->alert('success', 'Product added to cart successfully!', [
@@ -48,32 +48,9 @@ class ShowProduct extends Component
         ]);
         $this->emitUp('$refresh');
         return redirect()->to('/product/' . $this->product_id->id);
-   
+
     }
-    // //add to cart function
-    // public function addToCart()
-    // {
-    //     $cart = Cart::where('id', $this->product_id->id)
-    //     // ->where('user_id', Auth::user()->id)
-    //     ->first();
-    //     if ($cart) {
-    //         $cart->increment('quantity');
-    //     } else {
-    //         $cart = new Cart();
-    //         // $cart->user_id = Auth::user()->id;
-    //         $cart->id = $this->product_id->id;
-    //         $cart->quantity = 1;
-    //         $cart->price = $this->product_id->price;
-    //         $cart->save();
-    //     }
-    //     $this->alert('success', 'Product added to cart successfully!', [
-    //         'position' => 'top',
-    //         'timer' => 3000,
-    //         'toast' => true,
-    //     ]);
-    //     $this->emitUp('$refresh');
-    //     return redirect()->to('/product/' . $this->product_id->id);
-    // }
+
     public function confirmAdd($id)
     {
         $this->product_id = Product::find($id);
@@ -107,6 +84,9 @@ class ShowProduct extends Component
         } else {
             $cart->delete();
         }
+        // remove product from cart_product table
+        $cart->products()->detach($id);
+        
         $this->alert('success', 'Product removed from cart successfully!', [
             'position' => 'top',
             'timer' => 3000,
