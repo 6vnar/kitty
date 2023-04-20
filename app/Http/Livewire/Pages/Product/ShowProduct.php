@@ -22,7 +22,7 @@ class ShowProduct extends Component
     }
 
 
-    //add to cart function use attach method to add product to cart for many to many relationship
+    //add to cart function 
     public function addToCart()
     {
 
@@ -55,8 +55,7 @@ class ShowProduct extends Component
     public function confirmAdd($id)
     {
         //if user is not logged in redirect to login page
-          //if its not auth
-          if (!Auth::check()) {
+            if (!Auth::check()) {
             $this->alert('error', 'Please login to add product to cart!', [
                 'position' => 'top',
                 'timer' => 3000,
@@ -88,7 +87,7 @@ class ShowProduct extends Component
     public function removeFromCart($id)
     {
         $cart = Cart::where('id', $id)
-            // ->where('user_id', Auth::user()->id)
+            ->where('user_id', Auth::user()->id)
             ->first();
         if ($cart->quantity > 1) {
             $cart->decrement('quantity');
