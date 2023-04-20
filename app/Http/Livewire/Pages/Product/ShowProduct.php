@@ -73,38 +73,7 @@ class ShowProduct extends Component
             'onCancelled' => 'cancelled'
         ]);
     }
-    public function confirmDelete()
-    {
-        $this->alert('info', 'are you sure you want to delete this product?', [
-            'position' => 'center',
-            'timer' => 3000,
-            'toast' => true,
-        ]);
-    }
 
-
-    //remove from cart function
-    public function removeFromCart($id)
-    {
-        $cart = Cart::where('id', $id)
-            ->where('user_id', Auth::user()->id)
-            ->first();
-        if ($cart->quantity > 1) {
-            $cart->decrement('quantity');
-        } else {
-            $cart->delete();
-        }
-        // remove product from cart_product table
-        $cart->products()->detach($id);
-        
-        $this->alert('success', 'Product removed from cart successfully!', [
-            'position' => 'top',
-            'timer' => 3000,
-            'toast' => true,
-        ]);
-        $this->emitUp('$refresh');
-        return redirect()->to('/product/' . $this->product_id->id);
-    }
     //cart updated function
     public function cartUpdated()
     {

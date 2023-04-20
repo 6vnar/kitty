@@ -1,6 +1,6 @@
 <div>
     @section('title',__('ui.Shopping Cart'))
-<div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+<div class="max-w-8xl mx-auto py-6 sm:px-6 lg:px-8">
     <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 bg-white border-b border-gray-200">
             @if (count($carts) > 0)
@@ -13,6 +13,7 @@
                         <th class=" @if (app()->getLocale() == 'ar') text-right @else text-left  @endif"> {{ __('ui.Price') }}</th>
                         <th class="@if (app()->getLocale() == 'ar') text-right @else text-left  @endif"> {{ __('ui.Quantity') }}</th>
                         <th class="@if (app()->getLocale() == 'ar') text-left @else text-right   @endif"> {{ __('ui.Subtotal') }}</th>
+                        <button  wire:click="confirmDelete({{ $cart->id }})" class="px-4 py-2 bg-pink-500 text-white rounded-lg">delete</button>
                     </tr>
                 </thead>
                 <tbody>
