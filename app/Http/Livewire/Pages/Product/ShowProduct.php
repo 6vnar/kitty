@@ -12,7 +12,7 @@ use Jantinnerezo\LivewireAlert\LivewireAlert;
 class ShowProduct extends Component
 {
     use LivewireAlert;
-    protected $listeners = ['cartUpdated', 'addToCart', 'confirmAdd','refresh'];
+    protected $listeners = ['cartUpdated', 'addToCart', 'confirmAdd', 'refresh'];
     public $product, $product_id;
 
 
@@ -22,20 +22,21 @@ class ShowProduct extends Component
     }
 
 
-    //add to cart function
+    //add to cart function use attach method to add product to cart for many to many relationship
     public function addToCart()
     {
         $cart = Cart::where('id', $this->product_id->id)
-        // ->where('user_id', Auth::user()->id)
-        ->first();
+            // ->where('user_id', Auth::user()->id)
+            ->first();
         if ($cart) {
             $cart->increment('quantity');
         } else {
             $cart = new Cart();
             // $cart->user_id = Auth::user()->id;
             $cart->id = $this->product_id->id;
-            $cart->quantity = 1;
-            $cart->price = $this->product_id->price;
+           
+           
+            $cart->products()->attach($this->product_id->id);
             $cart->save();
         }
         $this->alert('success', 'Product added to cart successfully!', [
@@ -46,6 +47,30 @@ class ShowProduct extends Component
         $this->emitUp('$refresh');
         return redirect()->to('/product/' . $this->product_id->id);
     }
+    // //add to cart function
+    // public function addToCart()
+    // {
+    //     $cart = Cart::where('id', $this->product_id->id)
+    //     // ->where('user_id', Auth::user()->id)
+    //     ->first();
+    //     if ($cart) {
+    //         $cart->increment('quantity');
+    //     } else {
+    //         $cart = new Cart();
+    //         // $cart->user_id = Auth::user()->id;
+    //         $cart->id = $this->product_id->id;
+    //         $cart->quantity = 1;
+    //         $cart->price = $this->product_id->price;
+    //         $cart->save();
+    //     }
+    //     $this->alert('success', 'Product added to cart successfully!', [
+    //         'position' => 'top',
+    //         'timer' => 3000,
+    //         'toast' => true,
+    //     ]);
+    //     $this->emitUp('$refresh');
+    //     return redirect()->to('/product/' . $this->product_id->id);
+    // }
     public function confirmAdd($id)
     {
         $this->product_id = Product::find($id);
@@ -72,8 +97,8 @@ class ShowProduct extends Component
     public function removeFromCart($id)
     {
         $cart = Cart::where('id', $id)
-        // ->where('user_id', Auth::user()->id)
-        ->first();
+            // ->where('user_id', Auth::user()->id)
+            ->first();
         if ($cart->quantity > 1) {
             $cart->decrement('quantity');
         } else {

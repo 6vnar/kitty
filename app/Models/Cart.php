@@ -18,7 +18,7 @@ class Cart extends Model
         'total_price',
     ];
 
-    public function product()
+    public function products()
     {
         return $this->belongsToMany(Product::class);
     }
