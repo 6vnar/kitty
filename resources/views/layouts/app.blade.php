@@ -29,6 +29,11 @@
     <script src="https://unpkg.com/flowbite@1.4.6/dist/flowbite.js"></script>
     <script src="https://kit.fontawesome.com/4e8940f861.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js" integrity="sha512-6PM0qYu5KExuNcKt5bURAoT6KCThUmHRewN3zUFNaoI6Di7XJPTMoT6K0nsagZKk2OB4L7E3q1uQKHNHd4stIQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+    .grayy {
+        background-color: #f4f8fb;
+    }
+</style>
 </head>
 
 <body class="font-sans tajawal bg-secondary-800" dir="{{ config('app.locale') == 'en' ? 'ltr' : 'rtl' }}">
