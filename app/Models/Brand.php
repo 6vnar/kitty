@@ -47,7 +47,7 @@ class Brand extends Model
         $ext = $image->extension();
         $name =  \Str::random(10) . '.' . $ext;
         $image = $image->storeAs('public/cars/' . $this->id . '/images/', $name);
-        $this->image_path = 'storage/cars/' . $this->id . '/images/' . $name;
+        $this->image = 'storage/cars/' . $this->id . '/images/' . $name;
         $this->save();
     }
 
@@ -57,7 +57,7 @@ class Brand extends Model
         $ext = $image->extension();
         $name =  \Str::random(10) . '.' . $ext;
         $image = $image->storeAs('public/cars/' . $this->id . '/images/', $name);
-        $this->image_path = 'storage/cars/' . $this->id . '/images/' . $name;
+        $this->image = 'storage/cars/' . $this->id . '/images/' . $name;
         $this->save();
     }
 

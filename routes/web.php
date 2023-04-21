@@ -60,5 +60,9 @@ Route::get('/brand/add', BrandAdd::class)->name('brand.add');
 Route::get('/category', Category::class)->name('category');
 Route::get('/category/add', CategoryAdd::class)->name('category.add');
 
+// product group
+
+Route::get('/product/add', ProductAdd::class)->name('product.add');
+
 
 

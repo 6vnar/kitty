@@ -30,9 +30,9 @@ class Add extends Component
         $brand = new Brand();
         $brand->add($data);
 
-        // if ($this->image_path) {
-        //     $brand->add_image($this->image_path);
-        // }
+        if ($this->image) {
+            $brand->add_image($this->image);
+        }
 
         $this->reset();
 

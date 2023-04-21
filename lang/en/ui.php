@@ -38,6 +38,8 @@ return [
     'Description' => 'Description',
     'Select Image' => 'Select Image',
     'successbrand' => 'Brand Added Successfully',
+    'Category Name' => 'Category Name',
+    'successcategory' => 'Category Added Successfully',
 
 
 
