@@ -38,7 +38,7 @@ class Side extends Component
                 __('ui.Managements'),
                 [
                     new TabItem(__('ui.Add-product'), 'fa-solid fa-circle-plus', 'home', true),
-                    new TabItem(__('ui.Add category'), 'fa-solid fa-circle-plus','home', true),
+                    new TabItem(__('ui.Add category'), 'fa-solid fa-circle-plus','category.add', true),
                     new TabItem(__('ui.Add Brand') ,'fa-solid fa-circle-plus','home', true),
                 ],
                 true

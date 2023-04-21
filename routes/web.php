@@ -18,6 +18,10 @@ use App\Http\Livewire\Pages\Product\{
 use App\Http\Livewire\Pages\Brand\{
     Admin\Add as BrandAdd,
 };
+use App\Http\Livewire\Pages\Category\{
+    Admin\Add as CategoryAdd,
+    Main as Category,
+};
 
 
 use App\Http\Livewire\Ui\AddToCart as CartController;
@@ -48,6 +52,10 @@ Route::get('/favourite', Favourite::class)->name('favourite');
 // brand group
 Route::get('/brand', Brand::class)->name('brand');
 Route::get('/brand/add', BrandAdd::class)->name('brand.add');
+
+// category group
+Route::get('/category', Category::class)->name('category');
+Route::get('/category/add', CategoryAdd::class)->name('category.add');
 
 
 
