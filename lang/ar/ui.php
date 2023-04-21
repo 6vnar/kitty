@@ -37,6 +37,7 @@ return [
     'Brand Name' => 'اسم العلامة التجارية',
     'Description' => 'الوصف',
     'Select Image' => 'اختر صورة',
+    'successbrand' => ' تم اضافة العلامة التجارية بنجاح ',
 
 
 

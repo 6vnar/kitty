@@ -37,6 +37,7 @@ return [
     'Brand Name' => 'Brand Name',
     'Description' => 'Description',
     'Select Image' => 'Select Image',
+    'successbrand' => 'Brand Added Successfully',
 
 
 

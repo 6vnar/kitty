@@ -17,27 +17,26 @@ class Add extends Component
     protected $rules = [
         'name' => 'required',
         'description' => 'required',
-        'image' => 'required|image|max:1024',
     ];
 
     public function add()
     {
         $this->validate();
+
         $data = [
             'name' => $this->name,
             'description' => $this->description,
-            'image' => $this->image,
         ];
         $brand = new Brand();
         $brand->add($data);
 
-        if ($this->image_path) {
-            $brand->add_image($this->image_path);
-        }
+        // if ($this->image_path) {
+        //     $brand->add_image($this->image_path);
+        // }
 
         $this->reset();
 
-        $this->alert('success', 'تم اضافة السيارة بنجاح  ', [
+        $this->alert('success',  __('ui.successbrand'), [
             'position' => 'center',
             'timer' => 3000,
             'toast' => true,
