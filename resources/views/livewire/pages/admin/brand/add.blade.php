@@ -6,13 +6,13 @@
 				<div class="mx-auto flex">
 					<div class=" relative z-0 mb-6 w-full">
 						<label for="text" class="text-sm text-navy-700 dark:text-white font-bold">{{__('ui.Brand Name')}}</label>
-						<input  wire:model="name" type="text" id="text" placeholder="" class="grayy focus:border-pink-600 focus:ring-0 mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm shadow-inner outline-none peer border-gray-200">
+						<input  wire:model="name" type="text" id="text" placeholder="Name" class="grayy focus:border-pink-600 focus:ring-0 mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm shadow-inner outline-none peer border-gray-200">
 					</div>
 				</div>
 				<div class="">
 					<div class="relative z-0 mb-6 w-full group">
 						<label for="text" class="text-sm text-navy-700 dark:text-white font-bold">{{__('ui.Description')}}</label>
-						<textarea  wire:model="description" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="grayy focus:border-pink-600 focus:ring-0 mt-2 flex h-60 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm shadow-inner outline-none peer border-gray-200" placeholder=" " required></textarea>
+						<textarea  wire:model="description" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="grayy focus:border-pink-600 focus:ring-0 mt-2 flex h-60 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm shadow-inner outline-none peer border-gray-200" placeholder="Description" required></textarea>
 					</div>
 				</div>
 				<div class=" relative items-center  justify-center bg-grey-lighter">

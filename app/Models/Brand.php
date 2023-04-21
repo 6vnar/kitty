@@ -23,7 +23,6 @@ class Brand extends Model
     }
 
 
-
     ### add ###
     public function add($data)
     {
@@ -38,8 +37,6 @@ class Brand extends Model
         $this->update($data);
     }
     ### End edit ###
-
-    
 
 
             ### image ###
@@ -65,6 +62,5 @@ class Brand extends Model
     }
 
     ### End image ###
-
 
 }
