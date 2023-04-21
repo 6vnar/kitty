@@ -6,6 +6,7 @@ use App\Http\Livewire\Pages\{
     Home\Main as Home,
     Product\Main as Product,
     Brand\Main as Brand,
+    Category\Main as Category,
 };
 use App\Http\Livewire\Pages\Product\{
     ShowProduct as ShowProduct,
@@ -15,12 +16,14 @@ use App\Http\Livewire\Pages\Product\{
     Makeup as Makeup,
     Favourite as Favourite,
 };
-use App\Http\Livewire\Pages\Brand\{
-    Admin\Add as BrandAdd,
-};
-use App\Http\Livewire\Pages\Category\{
-    Admin\Add as CategoryAdd,
-    Main as Category,
+
+use App\Http\Livewire\Pages\Admin\{
+    Category\Add as CategoryAdd,
+    Category\Edit as CategoryEdit,
+    Brand\Add as BrandAdd,
+    Brand\Edit as BrandEdit,
+    Product\Add as ProductAdd,
+    Product\Edit as ProductEdit,
 };
 
 

@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Livewire\Pages\Brand\Admin;
+namespace App\Http\Livewire\Pages\Admin\Brand;
 
 use Livewire\Component;
 use Livewire\WithFileUploads;
 use Jantinnerezo\LivewireAlert\LivewireAlert;
 use App\Models\Brand;
-
 
 class Add extends Component
 {
@@ -46,6 +45,6 @@ class Add extends Component
     }
     public function render()
     {
-        return view('livewire.pages.brand.admin.add');
+        return view('livewire.pages.admin.brand.add');
     }
 }
