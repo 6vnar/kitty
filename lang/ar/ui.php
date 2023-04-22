@@ -40,6 +40,13 @@ return [
     'successbrand' => ' تم اضافة العلامة التجارية بنجاح ',
     'Category Name' => 'اسم القسم',
     'successcategory' => ' تم اضافة القسم بنجاح ',
+    'Price' => 'السعر',
+    'Select Category' => 'اختر القسم',
+    'Select Brand' => 'اختر العلامة التجارية',
+    'Discount'   => 'الخصم' ,
+    'successproduct' => ' تم اضافة المنتج بنجاح ',
+    'Quantity' => 'الكمية ',
+
 
 
 

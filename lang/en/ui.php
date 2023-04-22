@@ -40,6 +40,11 @@ return [
     'successbrand' => 'Brand Added Successfully',
     'Category Name' => 'Category Name',
     'successcategory' => 'Category Added Successfully',
+    'Price' => 'Price',
+    'Select Category' => 'Select Category',
+    'Select Brand' => 'Select Brand',
+    'Discount' => 'Discount',
+    'Quantity' => 'Quantity' ,
 
 
 
