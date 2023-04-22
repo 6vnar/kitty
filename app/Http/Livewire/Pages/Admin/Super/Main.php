@@ -11,21 +11,11 @@ class Main extends Component
     public $admins ;
     use LivewireAlert;
     protected $listeners = ['$refresh'];
-    public function add()
-    {
-        $this->alert('info', 'لأضافة مدير للموقع قم بترقيته من صفحة المتبرعين', [
-            'position' => 'center',
-            'timer' => 3000,
-            'toast' => true,
-        ]);
-    }
+    
     public function render()
     {
-        // $this->admins = User::where('is_admin', true)->get();
-        $this->admins = User::all();
-        // dd($this->admins->toArray());
-        //dd($this->admins->append('get_shares')->toArray());
-        //dd($this->admins->toArray());
+        // is admin and id is not 1 
+        $this->admins = User::where('is_admin', true)->where('id', '!=', 1)->get();
         return view('livewire.pages.admin.super.main');
     }
 }

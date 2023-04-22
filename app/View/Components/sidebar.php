@@ -31,7 +31,7 @@ class sidebar extends Component
                     new TabItem(__('ui.clothes'), 'fa-solid fa-shirt', 'clothes'),
                     new TabItem(__('ui.makeup'), 'fa-solid fa-eye','makeup'),
                     new TabItem(__('ui.accessories'), 'fa-solid fa-venus-mars', 'accessories'),
-                    new TabItem(__('ui.shoes'), 'fa-solid fa-home', 'shoes'),
+                    new TabItem(__('ui.shoes'), 'fa-solid fa-shoe-prints', 'shoes'),
                     new TabItem(__('ui.Favourites'), 'fa-solid fa-heart', 'favourite'),
 
                 ]

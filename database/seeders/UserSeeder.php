@@ -25,7 +25,6 @@ class UserSeeder extends Seeder
             'address' => 'basra',
             'is_admin' => true,
         ]);
-
         ## employee ##
         # id: 1
         User::create([
@@ -34,11 +33,8 @@ class UserSeeder extends Seeder
             'password' => bcrypt('123456'),
             'phone_number' => '01000000000',
             'address' => 'basra',
-
             'is_admin' => true,
         ]);
-
-
         ## USERS ##
         # id: 2
         User::create([
@@ -47,8 +43,6 @@ class UserSeeder extends Seeder
             'password' => bcrypt('123456'),
             'phone_number' => '01000000000',
             'address' => 'basra',
-
         ]);
-
     }
 }
