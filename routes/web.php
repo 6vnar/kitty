@@ -43,6 +43,7 @@ Route::get('change-language/{locale}', [MainController::class, 'changeLanguage']
 
 
 Route::get('/', Home::class)->name('home');
+
 // product group
 Route::get('/product', Product::class)->name('product');
 Route::get('/product/{id}', ShowProduct::class)->name('show_product');
@@ -52,6 +53,7 @@ Route::get('/shoes', Shoes::class)->name('shoes');
 Route::get('/accessories', Accessories::class)->name('accessories');
 Route::get('/makeup', Makeup::class)->name('makeup');
 Route::get('/favourite', Favourite::class)->name('favourite');
+
 // brand group
 Route::get('/brand', Brand::class)->name('brand');
 Route::get('/brand/add', BrandAdd::class)->name('brand.add');
