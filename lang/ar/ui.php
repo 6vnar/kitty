@@ -58,4 +58,6 @@ return [
     'delete' => 'حذف',
     'employee' => ' الموظفين',
     'Your cart is empty.' => ' عربة التسوق فارغة ',
+    'choosBrand Name' => 'اختر العلامة التجارية',
+
 ];
