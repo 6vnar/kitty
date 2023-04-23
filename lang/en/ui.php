@@ -53,5 +53,8 @@ return [
     'basic information' => 'Basic Information' ,
     'employee reduction' => 'Employee Reduction',
     'add employee' => 'Add Employee',
+    'delete' => 'Delete',
+    'employee' => 'Employee' ,
+    'Your cart is empty.' => 'Your cart is empty.',
 
 ];

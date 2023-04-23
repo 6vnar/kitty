@@ -55,4 +55,7 @@ return [
     'basic information' => 'المعلومات الاساسية' ,
     'employee reduction' => 'تخفيض رتبة الموظف',
     'add employee' => 'اضافة موظف',
+    'delete' => 'حذف',
+    'employee' => ' الموظفين',
+    'Your cart is empty.' => ' عربة التسوق فارغة ',
 ];

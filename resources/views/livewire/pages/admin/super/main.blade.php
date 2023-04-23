@@ -1,3 +1,5 @@
+<div>
+    @section('title', __('ui.employee'))
     <div class="px-4 md:px-8 xl:px-12   bg-white text-gray-800 ">
         <div class="flex mx-auto justify-center mt-6  pt-9">
             @if (auth()->user()->id == 1)
@@ -18,3 +20,4 @@
             @endforelse
         </div>
     </div>
+</div>

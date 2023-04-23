@@ -59,17 +59,17 @@ Route::get('/accessories', Accessories::class)->name('accessories');
 Route::get('/makeup', Makeup::class)->name('makeup');
 Route::get('/favourite', Favourite::class)->name('favourite');
 
-// brand group
-Route::get('/brand', Brand::class)->name('brand');
-Route::get('/brand/add', BrandAdd::class)->name('brand.add');
+// // brand group
+// Route::get('/brand', Brand::class)->name('brand');
+// Route::get('/brand/add', BrandAdd::class)->name('brand.add');
 
-// category group
-Route::get('/category', Category::class)->name('category');
-Route::get('/category/add', CategoryAdd::class)->name('category.add');
+// // category group
+// Route::get('/category', Category::class)->name('category');
+// Route::get('/category/add', CategoryAdd::class)->name('category.add');
 
-// product group
+// // product group
 
-Route::get('/product/add', ProductAdd::class)->name('product.add');
+// Route::get('/product/add', ProductAdd::class)->name('product.add');
 
 
 
