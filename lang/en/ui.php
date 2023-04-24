@@ -33,7 +33,7 @@ return [
     'order now' => 'Order Now !',
     'View' => 'View',
     'Add Brand' => 'Add Brand',
-    'Add' => 'Add',
+    'add' => 'Add',
     'Brand Name' => 'Brand Name',
     'Description' => 'Description',
     'Select Image' => 'Select Image',
@@ -58,5 +58,6 @@ return [
     'Your cart is empty.' => 'Your cart is empty.',
     'choosBrand Name' => 'choose  Brand Name',
     'Search' => 'Search',
+    'no employee' => 'There are no employees',
 
 ];

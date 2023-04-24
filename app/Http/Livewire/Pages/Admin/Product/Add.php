@@ -13,7 +13,7 @@ class Add extends Component
 {
     use LivewireAlert;
     use WithFileUploads;
-    public $name , $category_id ,$brand_id ,$description ,$quantity ,$price ,$discount ,$search ,$brands , $categories ;
+    public $name , $category_id ,$user_id ,$brand_id ,$description ,$quantity ,$price ,$image_path ,$discount ,$search ,$search1,$brands , $categories ;
 
     protected $rules = [
         'category_id' => 'required',
@@ -29,8 +29,9 @@ class Add extends Component
     public function add (){
         $this->validate();
         $product = Product::create([
+            'user_id' => auth()->user()->id,
             'name' => $this->name,
-            'description' => $this->price,
+            'price' => $this->price,
             'quantity' => $this->quantity,
             'category_id' => $this->category_id,
             'brand_id' => $this->brand_id,
@@ -38,8 +39,8 @@ class Add extends Component
             'discount' => $this->discount,
         ]);
         
-        // if ($this->image_path)
-        //     $student->add_image($this->image_path);
+        if ($this->image_path)
+            $product->add_image($this->image_path);
 
         $this->alert('success', 'تمت الاضافة', [
             'position' => 'top',
@@ -51,10 +52,15 @@ class Add extends Component
     }
     public function render()
     {
+        if ($this->search) {
             $search = '%' . $this->search . '%';
             $this->brands = Brand::where('name' , 'LIKE', $search)->get();
-            $this->categories = Category::where('name' , 'LIKE', $search)->get();
-            
+        }
+        if ($this->search1) {
+
+            $search1 = '%' . $this->search1 . '%';
+            $this->categories = Category::where('name' , 'LIKE', $search1)->get();
+        }
         return view('livewire.pages.admin.product.add');
     }
 }

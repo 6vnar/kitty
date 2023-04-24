@@ -15,7 +15,7 @@
             <livewire:pages.admin.super.card :item="$item" key="{{ now() }}" />
             @empty
             <div class="text-2xl font-medium text-gray-700">
-                لايوجد فريق
+            {{__('ui.no employee')}}
             </div>
             @endforelse
         </div>

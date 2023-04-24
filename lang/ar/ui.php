@@ -33,7 +33,7 @@ return [
     'order now' => ' اطلب الان !',
     'View' => ' عرض ',
     'Add Brand' => 'اضافة علامة تجارية',
-    'Add' => 'اضافة',
+    'add' => 'اضافة',
     'Brand Name' => 'اسم العلامة التجارية',
     'Description' => 'الوصف',
     'Select Image' => 'اختر صورة',
@@ -60,5 +60,6 @@ return [
     'Your cart is empty.' => ' عربة التسوق فارغة ',
     'choosBrand Name' => 'اختر العلامة التجارية',
     'Search' => 'بحث',
+    'no employee' => 'لا يوجد موظفين',
 
 ];
