@@ -34,6 +34,8 @@ class Add extends Component
             'timerProgressBar' => true,
             'width' => '400',
         ]);
+        //redirect
+        return redirect()->route('admins');
     }
     public function render()
     {
