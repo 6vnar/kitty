@@ -107,14 +107,14 @@
                     @endauth
                     @if (app()->getLocale() == 'ar')
                     <x-jet-dropdown-link href="{{ route('change_locale', 'en') }}">
-                        <div class="p-3 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2" >
+                        <div class="p-3 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none text-gray-500 focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2" >
                             <i class="fa-solid fa-globe w-5 h-5"></i>
                         </div>
                     </x-jet-dropdown-link>
                     @elseif(app()->getLocale() == 'en')
                     <x-jet-dropdown-link href="{{ route('change_locale', 'ar') }}">
 
-                        <div class="p-3 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2">
+                        <div class="p-3 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none text-gray-500 focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2">
                             <i class="fa-solid fa-globe w-5 h-5"></i>
 
                         </div>
