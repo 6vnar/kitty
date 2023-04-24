@@ -3,23 +3,39 @@
 	<div class="grid  grid-cols-2	justify-center items-center w-full  ">
 		<div class=" w-2/4 flex justify-center mx-auto items-center  ">
 			<form class="w-full " wire:submit.prevent="add">
-			<div>
-                <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 ">
-				{{__('ui.Brand Name')}}</label>
-                </label>
-                <div class="flex  gap-2">
-                    <input wire:model="search" required type="text" class="block  p-2 text-sm text-gray-900 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
-                    @if ($search)
-                    <select wire:model="brand_id" required class="border border-gray-300 px-9 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                        <option value="" selected>  {{__('ui.choosBrand Name')}} </option>
-                        @foreach ($brands as $brand)
-                        <option value="{{$brand->id}}">{{$brand->name}}</option>
-                        @endforeach
-                    </select>
-                    @endif
-                </div>
-            </div>
-			
+				<div>
+					<label for="countries" class="block mb-2 text-sm font-medium text-gray-900 ">
+						{{__('ui.Brand Name')}}</label>
+					</label>
+					<div class="flex  gap-2">
+						<input wire:model="search" required placeholder="{{__('ui.Search')}}" type="text" class="block  p-2 text-sm text-gray-900 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+
+						<select wire:model="brand_id" required class="border border-gray-300 px-9 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-10 p-2.5">
+							<option value="" selected> </option>
+							@foreach ($brands as $brand)
+							<option value="{{$brand->id}}">{{$brand->name}}</option>
+							@endforeach
+						</select>
+
+					</div>
+				</div>
+				<div>
+					<label for="countries" class="block mb-2 text-sm font-medium text-gray-900 ">
+						{{__('ui.Category Name')}}</label>
+					</label>
+					<div class="flex  gap-2">
+						<input wire:model="search" required placeholder="{{__('ui.Search')}}" type="text" class="block  p-2 text-sm text-gray-900 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+
+						<select wire:model="category_id" required class="border border-gray-300 px-9 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-10 p-2.5">
+							<option value="" selected> </option>
+							@foreach ($categories as $category)
+							<option value="{{$category->id}}">{{$category->name}}</option>
+							@endforeach
+						</select>
+
+					</div>
+				</div>
+
 				<!-- product name  -->
 				<div class="mx-auto flex">
 					<div class=" relative z-0 mb-6 w-full">

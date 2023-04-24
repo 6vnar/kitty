@@ -7,12 +7,13 @@ use Jantinnerezo\LivewireAlert\LivewireAlert;
 use Livewire\WithFileUploads;
 use App\Models\Product;
 use App\Models\Brand;
+use App\Models\Category;
 
 class Add extends Component
 {
     use LivewireAlert;
     use WithFileUploads;
-    public $name , $category_id ,$brand_id ,$description ,$quantity ,$price ,$discount ,$search ,$brands ;
+    public $name , $category_id ,$brand_id ,$description ,$quantity ,$price ,$discount ,$search ,$brands , $categories ;
 
     protected $rules = [
         'category_id' => 'required',
@@ -50,10 +51,10 @@ class Add extends Component
     }
     public function render()
     {
-        if ($this->search) {
             $search = '%' . $this->search . '%';
-            $this->brands = Brand::where('name', 'LIKE', $search)->get();
-        }
+            $this->brands = Brand::where('name' , 'LIKE', $search)->get();
+            $this->categories = Category::where('name' , 'LIKE', $search)->get();
+            
         return view('livewire.pages.admin.product.add');
     }
 }

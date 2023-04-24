@@ -57,5 +57,6 @@ return [
     'employee' => 'Employee' ,
     'Your cart is empty.' => 'Your cart is empty.',
     'choosBrand Name' => 'choose  Brand Name',
+    'Search' => 'Search',
 
 ];
