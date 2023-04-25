@@ -14,7 +14,11 @@ class Favourite extends Component
 
     public function mount()
     {
-        $this->favorites = auth()->user()->favorites ?? []; 
+        if (auth()->check()) {
+            $this->favorites = Product::whereHas('favorites', function ($query) {
+                $query->where('user_id', auth()->user()->id);
+            })->get();
+        }
     }
 
     public function render()
