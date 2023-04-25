@@ -9,15 +9,20 @@ use App\Models\Favourite as FavouriteModel;
 class Favourite extends Component
 {
 
-    protected $listeners = ['favouriteUpdated' => '$refresh'];
-    public $favourites;
+    protected $listeners = ['favouriteUpdated' => '$favouriteUpdated', 'productAddedToFavorites' => 'addToFavorites'];
+    public $favorites;
+
+    public function mount()
+    {
+        $this->favorites = auth()->user()->favorites ?? []; 
+    }
 
     public function render()
     {
-        $favorites = auth()->user()->favorites;
-        return view('livewire.pages.product.favourite',
-        [
-            'favourites' => $this->favourites
+
+        return view('livewire.pages.product.favourite'
+        , [
+            'favorites' => $this->favorites
         ]);
     }
 }

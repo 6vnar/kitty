@@ -9,7 +9,8 @@
                     fill="white" />
             </svg>
 
-            <button wire:click="addToFavorites" class="text-red-500 {{ $isFavorite ? 'fill-current' : 'fill-none' }}">
+            <button wire:click="addToFavorites" class="btn btn-primary {{ $isFavorite ? 'disabled' : '' }}">
+                {{ $isFavorite ? 'Added to Favorites' : 'Add to Favorites' }}
                 <i class="fa-solid fa-heart w-6 h-6"></i>
             </button>
             <div class="relative pt-8 px-8 flex items-center justify-center">

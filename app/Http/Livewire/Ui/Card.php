@@ -4,23 +4,46 @@ namespace App\Http\Livewire\Ui;
 
 use Livewire\Component;
 use App\Models\Product;
+use App\Models\Favorite;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 
 class Card extends Component
 {
-    public $product;
+    public $product, $product_id;
     public $isFavorite = false;
 
-    //fun addToFavorites
-    public function addToFavorites()
-    {
-        $this->isFavorite = true;
-        // Add item to user's favorites list
+
+    protected $listeners = ['productAddedToFavorites' => 'addToFavorites', 'favouriteUpdated' => '$refresh'];
     
-        session()->flash('success', 'Card added to favorites!');
-            
+    //fun addToFavorites for many to many relationship with product in favorites_product table and one to many with user
+
+    public function addToFavorites()
+{
+    
+    $this->product_id = Product::find($this->product->id);
+    if ($this->product_id) {
+        $favorite = Favorite::where('id', $this->product_id->id)
+            ->where('user_id', Auth::user()->id)
+            ->first();
+        if ($favorite) {
+            $favorite->delete();
+            $this->isFavorite = false;
+        } else {
+            $favorite = Favorite::create([
+                'user_id' => Auth::user()->id,
+                'product_id' => $this->product_id->id
+            ]);
+            $this->isFavorite = true;
+        }
+        // add product to favorites_product table
+        $favorite->products()->attach($this->product_id->id);
+        $this->emit('favouriteUpdated');
     }
+}
+
+
     public function rander()
     {
         return view('livewire.ui.card');

@@ -92,7 +92,7 @@ class User extends Authenticatable implements JWTSubject
 
     ### Relationships ###
     public function favourites(){
-        return $this->hasMany(Favourite::class);
+        return $this->hasMany(Favorite::class);
     }
 
     public function products(){
