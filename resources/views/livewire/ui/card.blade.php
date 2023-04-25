@@ -8,11 +8,18 @@
                 <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)"
                     fill="white" />
             </svg>
-
-            <button wire:click="addToFavorites" class="btn btn-primary {{ $isFavorite ? 'disabled' : '' }}">
-                {{ $isFavorite ? 'Added to Favorites' : 'Add to Favorites' }}
-                <i class="fa-solid fa-heart w-6 h-6"></i>
-            </button>
+            <div class="relative pt-5 px-5 flex items-start justify-start">
+            @auth
+                <button wire:click="addToFavorites" class="btn btn-primary {{ $isFavorite ? 'disabled' : '' }}">
+                    <i class="fa-solid fa-heart w-6 h-6"></i>
+                </button>
+            @endauth
+            @admin
+                <button wire:click="addToFavorites" class="btn btn-primary {{ $isFavorite ? 'disabled' : '' }}">
+                    <i class="fa-solid fa-heart w-6 h-6"></i>
+                </button>
+            @endadmin
+        </div>
             <div class="relative pt-8 px-8 flex items-center justify-center">
 
                 <div class="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3"
