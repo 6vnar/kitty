@@ -5,6 +5,7 @@ namespace App\View\Components;
 use Illuminate\View\Component;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\Category;
 class sidebar extends Component
 {
     public $tabs;
@@ -23,28 +24,40 @@ class sidebar extends Component
             'en' => 'English',
             'ar' => 'عربي',
         ];
-        $this->tabs = [
-            new Tab(
+        //get category name 
+        $categories = Category::all();
+        // loop on category name and icons and route example fa-solid fa-home', 'home' 
+        $this->tabs = [];
+        foreach ($categories as $category) {
+            $this->tabs[] = new Tab(
                 __('ui.Menu'),
                 [
-                    new TabItem(__('ui.home'), 'fa-solid fa-home', 'home'),
-                    new TabItem(__('ui.clothes'), 'fa-solid fa-shirt', 'clothes'),
-                    new TabItem(__('ui.makeup'), 'fa-solid fa-eye','makeup'),
-                    new TabItem(__('ui.accessories'), 'fa-solid fa-venus-mars', 'accessories'),
-                    new TabItem(__('ui.shoes'), 'fa-solid fa-shoe-prints', 'shoes'),
-                    new TabItem(__('ui.Favourites'), 'fa-solid fa-heart', 'favourite'),
-
+                    new TabItem($category->name, 'fa-solid fa-home', 'home', true),
                 ]
-            ),
+            );
+        }
+        // $this->tabs = [
+
+        //     new Tab(
+        //         __('ui.Menu'),
+        //         [
+        //             new TabItem(__('ui.home'), 'fa-solid fa-home', 'home'),
+        //             new TabItem(__('ui.clothes'), 'fa-solid fa-shirt', 'clothes'),
+        //             new TabItem(__('ui.makeup'), 'fa-solid fa-eye','makeup'),
+        //             new TabItem(__('ui.accessories'), 'fa-solid fa-venus-mars', 'accessories'),
+        //             new TabItem(__('ui.shoes'), 'fa-solid fa-shoe-prints', 'shoes'),
+        //             // new TabItem(__('ui.bags'), 'fa-solid fa-shopping-bag', 'bags'),
+        //         ]
+        //     ),
             
-        ];
+        // ];
         $this->admins = [
             new Tab(
                 __('ui.Managements'),
                 [
-                    new TabItem(__('ui.Add product'), 'fa-solid fa-circle-plus', 'product.add', true),
-                    new TabItem(__('ui.Add category'), 'fa-solid fa-circle-plus','category.add', true),
-                    new TabItem(__('ui.Add Brand') ,'fa-solid fa-circle-plus','brand.add', true),
+                    new TabItem(__('ui.Add product'), 'fa-solid fa-circle-plus', 'product.add'),
+                    new TabItem(__('ui.Add category'), 'fa-solid fa-circle-plus','category.add'),
+                    new TabItem(__('ui.Add Brand') ,'fa-solid fa-circle-plus','brand.add'),
                 ],
                 true
             ),

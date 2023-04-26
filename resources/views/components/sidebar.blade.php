@@ -104,6 +104,10 @@
                         <i class="fa-solid fa-cart-shopping hover:text-white p-1 w-5 h-5"></i>
                         </button>
                     </a>
+                    <a href="{{ route('favourite') }}"><button class="p-2 transition-colors text-gray-500 rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2 text-gray-500 bg-white" >
+                        <i class="fa-solid fa-heart hover:text-white p-1 w-5 h-5"></i>
+                        </button>
+                    </a>
                     @endauth
                     @if (app()->getLocale() == 'ar')
                     <x-jet-dropdown-link href="{{ route('change_locale', 'en') }}">
@@ -147,8 +151,7 @@
 
                     <a href="{{ route('register') }}" class=" hover:text-white text-sm text-gray-500 underline"><span class="sr-only">register</span>
 
-                        <button class="p-2 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2" :class="(isSidebarOpen && currentSidebarTab == 'messagesTab') ? 'text-white bg-[#fbdddf]' :
-                                'text-gray-500 bg-white'">
+                        <button class="p-2 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2" >
 
                             <i class="fa-solid fa-user-plus hover:text-white p-1 w-5 h-5"></i>
                         </button>
