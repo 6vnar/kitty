@@ -8,17 +8,13 @@
                 <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)"
                     fill="white" />
             </svg>
+            
             <div class="relative pt-3 px-3 flex items-start justify-start">
                 @auth
                     <button wire:click="addToFavorites" class="text-gray-200 {{ $isFavorite ? 'text-red-500' : '' }}">
                         <i class="fa-solid fa-heart w-6 h-6"></i>
                     </button>
                 @endauth
-                @admin
-                    <button wire:click="addToFavorites" class="text-gray-200 {{ $isFavorite ? 'text-red-500' : '' }}">
-                        <i class="fa-solid fa-heart w-6 h-6"></i>
-                    </button>
-                @endadmin
             </div>
             <div class="relative pt-8 px-8 flex items-center justify-center">
 
