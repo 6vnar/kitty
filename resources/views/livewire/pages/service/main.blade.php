@@ -1,18 +1,29 @@
 <div>
     @section('title', __('ui.service'))
-    <div class="grid  grid-cols-2	justify-center items-center w-full  ">
-        <div class=" w-2/4 flex justify-center mx-auto items-center  ">
-            <form class="w-full " wire:submit.prevent="add">
+    <div class="grid   grid-cols-2	justify-center   w-full  ">
+        <div class=" w-2/4  justify-center mx-auto items-center  ">
+            <div class="flex mx-auto justify-center items-center gap-6 mt-6 mb-6 pb-6">
+                <video autoplay loop muted playsinline class="w-20 h-20 object-cover">
+                    <source src="{{ asset('images/side/facebook1.mp4') }}" type="video/mp4" />
+                </video>
+                <video autoplay loop muted playsinline class="w-20 h-20 object-cover">
+                    <source src="{{ asset('images/side/whatsapp1.mp4') }}" type="video/mp4" />
+                </video>
+                <video autoplay loop muted playsinline class="w-20 h-20 object-cover">
+                    <source src="{{ asset('images/side/instagram2.mp4') }}" type="video/mp4" />
+                </video>
+            </div>
+            <form class="w-full mt-6 pt-6 " wire:submit.prevent="add">
                 <div>
-                <div class="text-md text-navy-700 dark:text-white font-bold">  {{__('ui.personal information')}}</div>
+                    <div class="text-md text-navy-700 dark:text-white font-bold"> {{__('ui.personal information')}}</div>
                     <div class="mx-auto flex">
                         <div class=" relative z-0 mb-6 w-full">
-                            <input wire:model="name"  placeholder="{{__('ui.Name')}}" type="text" id="text" class="grayy focus:border-pink-600 focus:ring-0 mt-2 flex h-9 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm shadow-inner outline-none peer border-gray-200">
+                            <input wire:model="name" placeholder="{{__('ui.Name')}}" type="text" id="text" class="grayy focus:border-pink-600 focus:ring-0 mt-2 flex h-9 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm shadow-inner outline-none peer border-gray-200">
                         </div>
                     </div>
                     <div class="mx-auto flex">
                         <div class=" relative z-0 mb-6 w-full">
-                            <input wire:model="email" type="text" id="text"  placeholder="{{__('ui.Email')}}" class="grayy focus:border-pink-600 focus:ring-0 mt-2 flex h-9 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm shadow-inner outline-none peer border-gray-200">
+                            <input wire:model="email" type="text" id="text" placeholder="{{__('ui.Email')}}" class="grayy focus:border-pink-600 focus:ring-0 mt-2 flex h-9 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm shadow-inner outline-none peer border-gray-200">
                         </div>
                     </div>
                     <div class="mx-auto flex">
@@ -33,7 +44,7 @@
                     <!-- comment -->
                     <div class="">
                         <div class="relative z-0 mb-6 w-full group">
-                            <textarea wire:model="comment" type="tel"  placeholder="{{__('ui.comment')}}" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="grayy focus:border-pink-600 focus:ring-0 mt-2 flex h-60 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm shadow-inner outline-none peer border-gray-200" required></textarea>
+                            <textarea wire:model="comment" type="tel" placeholder="{{__('ui.comment')}}" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="floating_phone" id="floating_phone" class="grayy focus:border-pink-600 focus:ring-0 mt-2 flex h-60 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm shadow-inner outline-none peer border-gray-200" required></textarea>
                         </div>
                     </div>
 
@@ -60,4 +71,3 @@
             <img class=" h-auto w-full  ml-7" src="{{ asset('images/side/service.jpg') }}" />
         </div>
     </div>
-</div>

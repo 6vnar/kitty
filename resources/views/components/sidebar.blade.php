@@ -126,6 +126,8 @@
                         </div>
                     </x-jet-dropdown-link>
                     @endif
+                    @auth
+
                     <a href="{{ route('service') }}"><button class="p-2 transition-colors text-gray-500 rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2 text-gray-500 bg-white">
                             <i class="fa-solid fa-headphones w-5 h-5"></i>
                         </button>
@@ -133,7 +135,6 @@
                     <!-- button login and sign up -->
                     <!-- if guset -->
 
-                    @auth
 
 
                     <form method="POST" action="{{ route('logout') }}" x-data>
