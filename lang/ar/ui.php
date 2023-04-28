@@ -61,5 +61,11 @@ return [
     'choosBrand Name' => 'اختر العلامة التجارية',
     'Search' => 'بحث',
     'no employee' => 'لا يوجد موظفين',
+    'service' => 'خدمة الزبائن',
+    'successservice' => 'شكرا لتواصلك معنا',
+    'subject' => 'الموضوع',
+    'comment' => 'التعليق',
+    'problem description' => 'وصف المشكلة',
+    'personal information' => 'معلومات شخصية ' ,
 
 ];

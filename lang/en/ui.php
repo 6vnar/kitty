@@ -59,5 +59,11 @@ return [
     'choosBrand Name' => 'choose  Brand Name',
     'Search' => 'Search',
     'no employee' => 'There are no employees',
+    'service' => 'Customer Service',
+    'successservice' => 'Thank you for contacting us',
+    'subject' => 'Subject' ,
+    'comment' => 'Comment' ,
+    'problem description' => 'Problem Description' ,
+    'personal information' => 'personal information',
 
 ];

@@ -7,6 +7,8 @@ use App\Http\Livewire\Pages\{
     Product\Main as Product,
     Brand\Main as Brand,
     Category\Main as Category,
+    Service\Main as Service,
+
 };
 use App\Http\Livewire\Pages\Product\{
     ShowProduct as ShowProduct,
@@ -57,19 +59,7 @@ Route::get('/clothes', Clothes::class)->name('clothes');
 Route::get('/shoes', Shoes::class)->name('shoes');
 Route::get('/accessories', Accessories::class)->name('accessories');
 Route::get('/makeup', Makeup::class)->name('makeup');
-Route::get('/favourite', Favourite::class)->name('favourite');
-
-// // brand group
-// Route::get('/brand', Brand::class)->name('brand');
-// Route::get('/brand/add', BrandAdd::class)->name('brand.add');
-
-// // category group
-// Route::get('/category', Category::class)->name('category');
-// Route::get('/category/add', CategoryAdd::class)->name('category.add');
-
-// // product group
-
-// Route::get('/product/add', ProductAdd::class)->name('product.add');
+Route::get('/service', Service::class)->name('service');
 
 
 
@@ -89,4 +79,6 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::get('/category/add', CategoryAdd::class)->name('category.add');
     });
     Route::get('/add-to-cart', CartController::class)->name('cart.add');
+    Route::get('/favourite', Favourite::class)->name('favourite');
+
 });

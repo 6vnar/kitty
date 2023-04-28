@@ -32,7 +32,7 @@ class sidebar extends Component
             $this->tabs[] = new Tab(
                 __('ui.Menu'),
                 [
-                    new TabItem($category->name, 'fa-solid fa-home', 'home', true),
+                    new TabItem($category->name, 'fa-solid fa-home', 'home'),
                 ]
             );
         }
