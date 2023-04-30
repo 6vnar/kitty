@@ -7,40 +7,6 @@
         </div>
         <!-- Sidebar -->
         <aside class="flex left-0 flex-shrink-0 transition-all">
-
-
-            <!-- Mobile bottom bar -->
-            <nav aria-label="Options" class="fixed inset-x-0 bottom-0 flex flex-row-reverse items-center justify-between px-4 py-2 bg-white border-t border-pink-100 sm:hidden shadow-t rounded-t-3xl">
-                <!-- Menu button -->
-                <button @click="(isSidebarOpen && currentSidebarTab == 'linksTab') ? isSidebarOpen = false : isSidebarOpen = true; currentSidebarTab = 'linksTab'" class="p-2 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2" :class="(isSidebarOpen && currentSidebarTab == 'linksTab') ? 'text-white bg-[#fbdddf]' :
-                    'text-gray-500 bg-white'">
-                    <span class="sr-only">Toggle sidebar</span>
-                    <svg aria-hidden="true" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
-                    </svg>
-                </button>
-
-                <!-- Logo -->
-                <a href="#">
-                    <img class="w-10 h-auto" src="https://raw.githubusercontent.com/kamona-ui/dashboard-alpine/main/public/assets/images/logo.png" alt="K-UI" />
-                </a>
-
-                <!-- User avatar button -->
-                <div class="relative flex items-center flex-shrink-0 p-2" x-data="{ isOpen: false }">
-                    <button @click="isOpen = !isOpen; $nextTick(() => {isOpen ? $refs.userMenu.focus() : null})" class="transition-opacity rounded-lg opacity-80 hover:opacity-100 focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2">
-                        <img class="w-8 h-8 rounded-lg shadow-md" src="https://avatars.githubusercontent.com/u/57622665?s=460&u=8f581f4c4acd4c18c33a87b3e6476112325e8b38&v=4" alt="Ahmed Kamel" />
-                        <span class="sr-only">User menu</span>
-                    </button>
-                    <div x-show="isOpen" @click.away="isOpen = false" @keydown.escape="isOpen = false" x-ref="userMenu" tabindex="-1" class="absolute w-48 py-1 mt-2 origin-bottom-left bg-white rounded-md shadow-lg left-10 bottom-14 focus:outline-none" role="menu" aria-orientation="vertical" aria-label="user menu">
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Your Profile</a>
-
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Settings</a>
-
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Sign out</a>
-                    </div>
-                </div>
-            </nav>
-
             <!-- Left mini bar -->
             <nav aria-label="Options" class="z-20 flex-col items-center flex-shrink-0 hidden w-16 py-4 bg-white border-pink-100 shadow-md sm:flex @if (app()->getLocale() == 'ar') border-l-2  rounded-tl-3xl rounded-bl-3xl @else border-r-2  rounded-tr-3xl rounded-br-3xl @endif ">
                 <!-- Logo -->
@@ -49,7 +15,7 @@
                         <i class="fa-solid fa-cat fa-2x"></i>
                     </a>
                 </div>
-
+                <!-- buttons -->
                 <div class="flex flex-col items-center flex-1 p-2 space-y-4">
                     <!-- Menu button -->
                     <button @click="(isSidebarOpen && currentSidebarTab == 'linksTab') ? isSidebarOpen = false : isSidebarOpen = true; currentSidebarTab = 'linksTab'" class="p-2 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2" :class="(isSidebarOpen && currentSidebarTab == 'linksTab') ? 'text-white bg-[#fbdddf]' :
@@ -59,7 +25,6 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
                         </svg>
                     </button>
-
                     <!-- Messages button -->
                     <button @click="(isSidebarOpen && currentSidebarTab == 'messagesTab') ? isSidebarOpen = false : isSidebarOpen = true; currentSidebarTab = 'messagesTab'" class="p-2 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2" :class="(isSidebarOpen && currentSidebarTab == 'messagesTab') ? 'text-white bg-[#fbdddf]' :
                         'text-gray-500 bg-white'">
@@ -77,7 +42,7 @@
                         </svg>
                     </button>
                     @admin
-                    <!-- admin button -->
+                    <!-- Settings button -->
                     <button @click="(isSidebarOpen && currentSidebarTab == 'admintab') ? isSidebarOpen = false : isSidebarOpen = true; currentSidebarTab = 'admintab'" class="p-2 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2" :class="(isSidebarOpen && currentSidebarTab == 'admintab') ? 'text-white bg-[#fbdddf]' :
                         'text-gray-500 bg-white'">
                         <span class="sr-only">Toggle sidebar</span>
@@ -86,30 +51,33 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
                     </button>
-
-
                     @endadmin
+                    <!-- admin button -->
                     @if(auth()->check() && auth()->user()->is_admin == true && auth()->user()->id == 1)
-                    <a href="{{ route('admins') }}"><button class="p-2 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] text-gray-500 hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2 ">
+                    <a href="{{ route('admins') }}">
+                        <button class="p-2 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] text-gray-500 hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2 ">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users">
                                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                                 <circle cx="9" cy="7" r="4"></circle>
                                 <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
                                 <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                             </svg>
-                        </button></a>
+                        </button>
+                    </a>
                     @endif
                     @auth
+                    <!-- Cart button -->
                     <a href="{{ route('cart.add') }}"><button class="p-2 transition-colors text-gray-500 rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2 text-gray-500 bg-white">
                             <i class="fa-solid fa-cart-shopping hover:text-white p-1 w-5 h-5"></i>
                         </button>
                     </a>
+                    <!-- Favourite button -->
                     <a href="{{ route('favourite') }}"><button class="p-2 transition-colors text-gray-500 rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2 text-gray-500 bg-white">
                             <i class="fa-solid fa-heart hover:text-white p-1 w-5 h-5"></i>
                         </button>
                     </a>
-
                     @endauth
+                    <!-- lang button -->
                     @if (app()->getLocale() == 'ar')
                     <x-jet-dropdown-link href="{{ route('change_locale', 'en') }}">
                         <div class="p-3 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none text-gray-500 focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2">
@@ -119,24 +87,18 @@
                     </x-jet-dropdown-link>
                     @elseif(app()->getLocale() == 'en')
                     <x-jet-dropdown-link href="{{ route('change_locale', 'ar') }}">
-
                         <div class="p-3 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none text-gray-500 focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2">
                             <i class="fa-solid fa-globe w-5 h-5"></i>
-
                         </div>
                     </x-jet-dropdown-link>
                     @endif
+                    <!-- service button -->
                     @auth
-
                     <a href="{{ route('service') }}"><button class="p-2 transition-colors text-gray-500 rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2 text-gray-500 bg-white">
                             <i class="fa-solid fa-headphones w-5 h-5"></i>
                         </button>
                     </a>
-                    <!-- button login and sign up -->
-                    <!-- if guset -->
-
-
-
+                    <!-- logout -->
                     <form method="POST" action="{{ route('logout') }}" x-data>
                         @csrf
                         <a href="{{ route('logout') }}" @click.prevent="$root.submit();" class="hover:text-white ml-4 text-sm text-gray-500 underline" role="menuitem" tabindex="-1" id="user-menu-item-2">
@@ -146,53 +108,20 @@
 
                         </a>
                     </form>
-
                     @else
+                    <!-- login -->
                     <a href="{{ url('/login') }}" class=" hover:text-white text-sm text-gray-500 underline"> <span class="sr-only">login</span>
-
                         <button class="p-2 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2">
                             <i class="fa-solid fa-right-to-bracket w-5 hover:text-white p-1 h-5"></i>
-
                         </button>
                     </a>
-
+                    <!-- register -->
                     <a href="{{ route('register') }}" class=" hover:text-white text-sm text-gray-500 underline"><span class="sr-only">register</span>
-
                         <button class="p-2 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2">
-
                             <i class="fa-solid fa-user-plus hover:text-white p-1 w-5 h-5"></i>
                         </button>
                     </a>
-
                     @endauth
-
-                    {{-- @auth
-                    <a href="{{ route('register') }}"
-                    <button @click="(isSidebarOpen && currentSidebarTab == 'messagesTab') ? isSidebarOpen = false : isSidebarOpen = true; currentSidebarTab = 'messagesTab'" class="p-2 transition-colors rounded-lg shadow-md hover:bg-[#fb97ac] hover:text-white focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2" :class="(isSidebarOpen && currentSidebarTab == 'messagesTab') ? 'text-white bg-[#fbdddf]' :
-                        'text-gray-500 bg-white'">
-                        <span class="sr-only">Toggle message panel</span>
-                        <i class="fa-solid fa-heart hover:text-white p-1 w-5 h-5"></i>
-                    </button>
-                    </a>
-                    @endauth --}}
-
-
-
-                </div>
-
-                <!-- User avatar -->
-                <div class="relative flex items-center flex-shrink-0 p-2" x-data="{ isOpen: false }">
-                    <button @click="isOpen = !isOpen; $nextTick(() => {isOpen ? $refs.userMenu.focus() : null})" class="transition-opacity rounded-lg opacity-80 hover:opacity-100 focus:outline-none focus:ring focus:ring-[#fbdddf] focus:ring-offset-white focus:ring-offset-2">
-                        <img class="w-10 h-10 rounded-lg shadow-md" src="https://avatars.githubusercontent.com/u/57622665?s=460&u=8f581f4c4acd4c18c33a87b3e6476112325e8b38&v=4" alt="Ahmed Kamel" />
-                        <span class="sr-only">User menu</span>
-                    </button>
-                    <div x-show="isOpen" @click.away="isOpen = false" @keydown.escape="isOpen = false" x-ref="userMenu" tabindex="-1" class="absolute w-48 py-1 mt-2 origin-bottom-left bg-white rounded-md shadow-lg left-10 bottom-14 focus:outline-none" role="menu" aria-orientation="vertical" aria-label="user menu">
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Your Profile</a>
-
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Settings</a>
-
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Sign out</a>
-                    </div>
                 </div>
             </nav>
             @if (app()->getLocale() == 'ar')
@@ -200,19 +129,15 @@
                 @elseif(app()->getLocale() == 'en')
                 <div x-transition:enter="transform transition-transform duration-300" x-transition:enter-start="-translate-x-full" x-transition:enter-end="translate-x-0" x-transition:leave="transform transition-transform duration-300" x-transition:leave-start="translate-x-0" x-transition:leave-end="-translate-x-full" x-show="isSidebarOpen" class="fixed inset-y-0 right-0 z-10 flex-shrink-0 w-64 bg-white border-pink-100 shadow-lg sm:left-16  @if (app()->getLocale() == 'ar') border-l-2  rounded-tl-3xl rounded-bl-3xl @else border-r-2  rounded-tr-3xl rounded-br-3xl @endif sm:w-72 lg:static lg:w-64">
                     @endif
+                    <!-- minue  -->
                     <nav x-show="currentSidebarTab == 'linksTab'" aria-label="Main" class="flex flex-col h-full">
                         <!-- Logo -->
                         <div class="flex items-center justify-center flex-shrink-0 py-10">
-                            <!-- <a href="#">
-                          
-                            <img class="w-24 h-auto" src="https://raw.githubusercontent.com/kamona-ui/dashboard-alpine/main/public/assets/images/logo.png" alt="K-UI" />
-                        </a> -->
                             <a href="{{ route('home') }}" class="flex items-center justify-center p-2 text-base text-gray text-[#fb97ac] rounded-lg">
                                 <i class="fa-solid fa-cat fa-2x w-16 h-auto"></i>
                                 <span class="ml-3 font-bold text-2xl">Kitty </span>
                             </a>
                         </div>
-
                         <!-- Links -->
                         <div class="flex-1 px-4 space-y-2 overflow-hidden hover:overflow-auto">
                             @foreach ($tabs as $tab)
@@ -225,9 +150,8 @@
                             </a>
                             @endforeach
                             @endforeach
-
                         </div>
-
+                        <!-- diccrioption -->
                         <div class="flex-shrink-0 p-4 mt-10">
                             <div class="hidden p-2 space-y-6 rounded-lg md:block">
                                 <img aria-hidden="true" class="-mt-10 " src="{{ asset('images/side/side3.jpg') }}" />
@@ -240,50 +164,37 @@
                                     </button>
                                 </a>
                             </div>
-
-
                         </div>
                     </nav>
-
-
-
-                    <section x-show="currentSidebarTab == 'messagesTab'" class="px-4 py-6">
-                        <h2 class="text-xl"> {{ __('ui.Messages') }}</h2>
-                            <!-- <div class=" group my-6 mx-3 ">
-
-                                <div class="  absolute  h-14 bg-gradient-to-r from-pink-500 to-blue-500  "></div>
-                                <div class="relative   bg-white ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-6">
-                                    <svg class="w-8 h-8 text-[#fb97ac]" fill="none" viewBox="0 0 24 24">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.75 6.75C6.75 5.64543 7.64543 4.75 8.75 4.75H15.25C16.3546 4.75 17.25 5.64543 17.25 6.75V19.25L12 14.75L6.75 19.25V6.75Z"></path>
-                                    </svg>
-                                    <div class="space-y-2">
-                                        <p class="text-slate-800">Learn how to make a glowing gradient background!</p>
-                                        <a href="https://braydoncoyer.dev/blog/tailwind-gradients-how-to-make-a-glowing-gradient-background" class="block text-indigo-400 group-hover:text-slate-800 transition duration-200" target="_blank">Read Article →</a>
-                                    </div>
+                    <!-- open messages -->
+                    <section class="px-4 py-6">
+                        <h2 class="text-xl mb-6"> {{ __('ui.Notifications') }}</h2>
+                        <div class="h-16 mt-6  w-full rounded-md bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-0.5">
+                            <div class="flex gap-2 items-center h-full w-full bg-white">
+                                <i class="fa-solid fa-user fa-fade h-9 w-9 p-2 " style="color: #e74793;"></i>
+                                <div>
+                                    <h1 class="text-xl">subject</h1>
                                 </div>
-                        </div> -->
+                            </div>
+                        </div>
                     </section>
-
+                    <!-- open notifications -->
                     <section x-show="currentSidebarTab == 'notificationsTab'" class="px-4 py-6">
                         <h2 class="text-xl"> {{ __('ui.Notifications') }}</h2>
                     </section>
-
-                    <nav x-show="currentSidebarTab == 'admintab'" aria-label="Main" class="flex flex-col h-full">
-                        <!-- Logo -->
+                    <!-- open Settings -->
+                    <section x-show="currentSidebarTab == 'admintab'" aria-label="Main" class="flex flex-col h-full">
                         <div class="flex items-center justify-center flex-shrink-0 py-10">
-
                             <a href="{{ route('home') }}" class="flex items-center justify-center p-2 text-base text-gray text-[#fb97ac] rounded-lg">
                                 <i class="fa-solid fa-cat fa-2x w-16 h-auto"></i>
                                 <span class="ml-3 font-bold text-2xl">Settings </span>
                             </a>
                         </div>
-
                         <!-- Links -->
                         <div class="flex-1 px-4 space-y-2 overflow-hidden hover:overflow-auto">
                             <!-- admin tab  -->
                             @foreach ($admins as $tab)
                             @foreach ($tab->items as $item)
-
                             <a href="{{ route($item->route) }}" class="flex items-center w-full space-x-2 text-white bg-[#fbdddf] rounded-lg">
                                 <span aria-hidden="true" class="p-2 bg-[#fb97ac] rounded-lg @if (app()->getLocale() == 'ar') ml-2 @else @endif">
                                     <i class="{{ $item->icon }}"></i>
@@ -292,17 +203,12 @@
                             </a>
                             @endforeach
                             @endforeach
-
                         </div>
-
-
-                    </nav>
-
-
+                    </section>
+                </div>
         </aside>
     </div>
 </div>
-
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.3/dist/alpine.min.js" defer></script>
 <script>
     const setup = () => {
