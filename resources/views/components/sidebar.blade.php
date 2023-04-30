@@ -167,15 +167,23 @@
                         </div>
                     </nav>
                     <!-- open messages -->
-                    <section class="px-4 py-6">
-                        <h2 class="text-xl mb-6"> {{ __('ui.Notifications') }}</h2>
-                        <div class="h-16 mt-6  w-full rounded-md bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-0.5">
-                            <div class="flex gap-2 items-center h-full w-full bg-white">
-                                <i class="fa-solid fa-user fa-fade h-9 w-9 p-2 " style="color: #e74793;"></i>
+                    <section x-show="currentSidebarTab == 'messagesTab'" class="px-4 py-6">
+                        <h2 class="text-xl mb-6"> {{ __('ui.Messages') }}</h2>
+                        <div id="myDiv" class="z-9 h-9 mt-6  w-full rounded-md bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-0.5">
+                            <div class="px-6 gap-2  h-full w-full bg-white">
+                                <div class="flex  justify-between items-center">
+                                    <i class="fa-solid fa-user  h-4 w-4 p-2 " style="color: #e74793;"></i>
+                                    <div>
+                                        <h1 class="text-md">subject</h1>
+                                    </div>
+                                    <i class="fa-solid fa-chevron-down fa-fade h-3 w-3" onclick="toggleHeight()" style="color: #000;"></i>
+                                </div>
                                 <div>
-                                    <h1 class="text-xl">subject</h1>
+                                    <p id="p" class=" text-sm ">message</p>
+
                                 </div>
                             </div>
+                           
                         </div>
                     </section>
                     <!-- open notifications -->
@@ -223,5 +231,21 @@
                 }
             },
         }
+    }
+
+    function toggleHeight() {
+        const div = document.getElementById('myDiv');
+        div.classList.toggle('h-36');
+        div.classList.toggle('transition-all');
+        div.classList.toggle('duration-500');
+        div.classList.toggle('ease-in-out');
+        const p = document.getElementById('p');
+        p.classList.toggle('block');
+        p.classList.toggle('transition-all');
+        p.classList.toggle('duration-500');
+        p.classList.toggle('ease-in-out');
+
+
+
     }
 </script>
