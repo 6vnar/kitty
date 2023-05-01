@@ -180,10 +180,8 @@
                                 </div>
                                 <div>
                                     <p id="p" class=" text-sm ">message</p>
-
                                 </div>
                             </div>
-                           
                         </div>
                     </section>
                     <!-- open notifications -->
@@ -232,7 +230,6 @@
             },
         }
     }
-
     function toggleHeight() {
         const div = document.getElementById('myDiv');
         div.classList.toggle('h-36');
@@ -244,8 +241,5 @@
         p.classList.toggle('transition-all');
         p.classList.toggle('duration-500');
         p.classList.toggle('ease-in-out');
-
-
-
     }
 </script>
