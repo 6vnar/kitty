@@ -70,13 +70,18 @@ Route::middleware(['auth:sanctum'])->group(function () {
         Route::get('/add-admin', AdminAdd::class)->name('addadmin');
         
         // product group
-        Route::get('/productadd', ProductAdd::class)->name('product.add');
+        Route::get('/product/add', ProductAdd::class)->name('product.add');
+        // Route::get('/product/edit/{id}', ProductEdit::class)->name('product.edit');
         // brand group
         Route::get('/brand', Brand::class)->name('brand');
         Route::get('/brand/add', BrandAdd::class)->name('brand.add');
+        // Route::get('/brand/edit/{id}', BrandEdit::class)->name('brand.edit');
         // category group
-        Route::get('/category', Category::class)->name('category');
+        // Route::get('/category', Category::class)->name('category');
+        Route::get('/category/{category_id}', Category::class)->name('category-show');
         Route::get('/category/add', CategoryAdd::class)->name('category.add');
+        // Route::get('/category/edit/{id}', CategoryEdit::class)->name('category.edit');
+        
     });
     Route::get('/add-to-cart', CartController::class)->name('cart.add');
     Route::get('/favourite', Favourite::class)->name('favourite');

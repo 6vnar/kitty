@@ -140,16 +140,19 @@
                         </div>
                         <!-- Links -->
                         <div class="flex-1 px-4 space-y-2 overflow-hidden hover:overflow-auto">
-                            @foreach ($tabs as $tab)
-                            @foreach ($tab->items as $item)
-                            <a href="{{ route($item->route) }}" class="flex items-center w-full space-x-2 text-white bg-[#fbdddf] rounded-lg">
-                                <span aria-hidden="true" class="p-2 bg-[#fb97ac] rounded-lg @if (app()->getLocale() == 'ar') ml-2 @else @endif">
-                                    <i class="{{ $item->icon }}"></i>
+                            @forelse ($category as $categor)
+                            <a href="{{ route('category-show' , ['category_id' => $categor->id]) }}" class="flex items-center w-full space-x-2 text-white bg-[#fbdddf] rounded-lg">
+                                <span aria-hidden="true" class="px-2 py-1 bg-[#fb97ac] rounded-lg @if (app()->getLocale() == 'ar') ml-2 @else @endif">
+                                <i class="fa-solid fa-folder-open-o fa-2x "></i>
+                                <!-- <i class="fa-solid fa-circle-plus"></i> -->
                                 </span>
-                                <span>{{ $item->title }}</span>
+                                <span>{{ $categor->name }}</span>
                             </a>
-                            @endforeach
-                            @endforeach
+                            @empty
+                            <div class="px-2 py-4  mb-4 text-lg md:text-2xl text-gray-700 bg-primary-100 rounded-lg" role="alert">
+                                لم يتم اضافة ليتم عرضها
+                            </div>
+                            @endforelse
                         </div>
                         <!-- diccrioption -->
                         <div class="flex-shrink-0 p-4 mt-10">
@@ -230,6 +233,7 @@
             },
         }
     }
+
     function toggleHeight() {
         const div = document.getElementById('myDiv');
         div.classList.toggle('h-36');

@@ -10,8 +10,9 @@ class sidebar extends Component
 {
     public $tabs;
     public $admins;
-
+    public $category;
     public $langs;
+    public $category_id;
 
     /**
      * Create a new component instance.
@@ -24,40 +25,19 @@ class sidebar extends Component
             'en' => 'English',
             'ar' => 'عربي',
         ];
-        //get category name 
-        $categories = Category::all();
-        // loop on category name and icons and route example fa-solid fa-home', 'home' 
-        $this->tabs = [];
-        foreach ($categories as $category) {
-            $this->tabs[] = new Tab(
-                __('ui.Menu'),
-                [
-                    new TabItem($category->name, 'fa-solid fa-home', 'home'),
-                ]
-            );
-        }
-        // $this->tabs = [
 
-        //     new Tab(
-        //         __('ui.Menu'),
-        //         [
-        //             new TabItem(__('ui.home'), 'fa-solid fa-home', 'home'),
-        //             new TabItem(__('ui.clothes'), 'fa-solid fa-shirt', 'clothes'),
-        //             new TabItem(__('ui.makeup'), 'fa-solid fa-eye','makeup'),
-        //             new TabItem(__('ui.accessories'), 'fa-solid fa-venus-mars', 'accessories'),
-        //             new TabItem(__('ui.shoes'), 'fa-solid fa-shoe-prints', 'shoes'),
-        //             // new TabItem(__('ui.bags'), 'fa-solid fa-shopping-bag', 'bags'),
-        //         ]
-        //     ),
+        $this->category = Category::all();
             
-        // ];
         $this->admins = [
             new Tab(
                 __('ui.Managements'),
                 [
-                    new TabItem(__('ui.Add product'), 'fa-solid fa-circle-plus', 'product.add'),
-                    new TabItem(__('ui.Add category'), 'fa-solid fa-circle-plus','category.add'),
                     new TabItem(__('ui.Add Brand') ,'fa-solid fa-circle-plus','brand.add'),
+                    // new TabItem(__('ui.Control Brand') ,'fa-solid fa-circle-plus','brand.edit'),
+                    new TabItem(__('ui.Add category'), 'fa-solid fa-circle-plus','category.add'),
+                    // new TabItem(__('ui.Add category'), 'fa-solid fa-circle-plus','category.edit'),
+                    new TabItem(__('ui.Add category'), 'fa-solid fa-circle-plus', 'product.add'),
+                    // new TabItem(__('ui.Add category'), 'fa-solid fa-circle-plus','product.edit'),
                 ],
                 true
             ),
