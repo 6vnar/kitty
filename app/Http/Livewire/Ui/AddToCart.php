@@ -20,22 +20,25 @@ class AddToCart extends Component
         $cart = Cart::where('id', $this->cart_id->id)
             ->where('user_id', Auth::user()->id)
             ->first();
-        if ($cart->quantity > 1) {
-            $cart->decrement('quantity');
-        } else {
-            $cart->delete();
-        }
-        // remove product from cart_product table
-        $cart->products()->detach($this->cart_id->id);
         
-        $this->alert('success', 'Product removed from cart successfully!', [
-            'position' => 'top',
-            'timer' => 3000,
-            'toast' => true,
-        ]);
-        $this->emitUp('$refresh');
+        if ($cart) {
+            // remove cart from carts table
+            $cart->delete();
+            
+            // remove product from cart_product table
+            $cart->products()->detach($this->cart_id->id);
+            
+            $this->alert('success', 'Product removed from cart successfully!', [
+                'position' => 'top',
+                'timer' => 3000,
+                'toast' => true,
+            ]);
+            $this->emitUp('$refresh');
+        }
+        
         return redirect()->to('/add-to-cart');
     }
+    
 
     public function confirmDelete($id)
     {
@@ -49,9 +52,11 @@ class AddToCart extends Component
             'onCancelled' => 'cancelled'
         ]);
     }
+
+    
     public function render()
     {
-        $carts = Cart::with('products')->get();
+        $carts = Cart::where('user_id', Auth::user()->id)->with('products')->get();
         
         return view('livewire.ui.add-to-cart', compact('carts'));
     }

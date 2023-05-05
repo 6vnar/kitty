@@ -30,7 +30,11 @@ class ShowProduct extends Component
             ->where('user_id', Auth::user()->id)
             ->first();
         if ($cart) {
-            $cart->increment('quantity');
+            $this->alert('error', 'Product already added to cart!', [
+                'position' => 'top',
+                'timer' => 3000,
+                'toast' => true,
+            ]);
         } else {
             $cart = new Cart();
             $cart->user_id = Auth::user()->id;
@@ -38,7 +42,7 @@ class ShowProduct extends Component
             $cart->quantity = 1;
             $cart->price = $this->product_id->price;
             $cart->save();
-        }
+        
 
         // add product to cart_product table
         $cart->products()->attach($this->product_id->id);
@@ -47,6 +51,7 @@ class ShowProduct extends Component
             'timer' => 3000,
             'toast' => true,
         ]);
+    }
         $this->emitUp('$refresh');
         return redirect()->to('/product/' . $this->product_id->id);
 

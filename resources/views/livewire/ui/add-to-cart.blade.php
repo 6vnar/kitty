@@ -5,7 +5,7 @@
             <div class="p-6 bg-white border-b border-gray-200">
                 @if (count($carts) > 0)
                 @foreach($carts as $cart)
-                <h2 class="text-lg font-bold">{{ $cart->id }}</h2>
+                {{-- <h2 class="text-lg font-bold">{{ $cart->id }}</h2> --}}
                 <table class="w-full">
                     <thead>
                         <tr>
@@ -28,12 +28,12 @@
                             <td>{{ $product['price'] }}</td>
                             <td>
                                 <div class="flex items-center">
-                                    <button class="p-1 border rounded-lg">-</button>
-                                    <span class="px-2">{{ $cart['quantity'] }}</span>
-                                    <button class="p-1 border rounded-lg">+</button>
+                                    <button class="p-1 border rounded-lg" onclick="decrementQuantity()">-</button>
+                                    <span id="quantity" class="px-2">{{ $cart['quantity'] }}</span>
+                                    <button class="p-1 border rounded-lg" onclick="incrementQuantity()">+</button>
                                 </div>
                             </td>
-                            <td class="@if (app()->getLocale() == 'ar') text-left @else text-right   @endif">{{ $product['price'] * $cart['quantity'] }}</td>
+                            <td class="@if (app()->getLocale() == 'ar') text-left @else text-right   @endif" id="subtotal" class="ml-4">${{ $cart['price'] * $cart['quantity'] }}</td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -43,8 +43,6 @@
                     <button wire:click="confirmDelete({{ $cart->id }})" class="px-4 py-2 bg-pink-500 text-white rounded-lg">{{ __('ui.delete') }}</button>
                 </div>
                 @endforeach
-               
-                
                 @else
                 <p class="text-xl">{{ __('ui.Your cart is empty.') }}</p>
                 @endif
@@ -52,3 +50,32 @@
         </div>
     </div>
 </div>
+<script>
+    let price = 0;
+    @if(isset($cart['price']))
+        price = {{ $cart['price'] }};
+    @endif
+
+    function decrementQuantity() {
+        const quantityElement = document.getElementById('quantity');
+        const quantity = parseInt(quantityElement.innerText);
+        if (quantity > 1) {
+            quantityElement.innerText = quantity - 1;
+            updateSubtotal();
+        }
+    }
+
+    function incrementQuantity() {
+        const quantityElement = document.getElementById('quantity');
+        const quantity = parseInt(quantityElement.innerText);
+        quantityElement.innerText = quantity + 1;
+        updateSubtotal();
+    }
+
+    function updateSubtotal() {
+        const quantityElement = document.getElementById('quantity');
+        const quantity = parseInt(quantityElement.innerText);
+        const subtotalElement = document.getElementById('subtotal');
+        subtotalElement.innerText = `$${price * quantity}`;
+    }
+</script>
