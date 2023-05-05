@@ -25,8 +25,7 @@ class ShowProduct extends Component
     //add to cart function 
     public function addToCart()
     {
-
-        $cart = Cart::where('id', $this->product_id->id)
+        $cart = Cart::where('product_id', $this->product_id->id)
             ->where('user_id', Auth::user()->id)
             ->first();
         if ($cart) {
@@ -38,29 +37,28 @@ class ShowProduct extends Component
         } else {
             $cart = new Cart();
             $cart->user_id = Auth::user()->id;
-            $cart->id = $this->product_id->id;
+            $cart->product_id = $this->product_id->id;
             $cart->quantity = 1;
             $cart->price = $this->product_id->price;
             $cart->save();
-        
-
-        // add product to cart_product table
-        $cart->products()->attach($this->product_id->id);
-        $this->alert('success', 'Product added to cart successfully!', [
-            'position' => 'top',
-            'timer' => 3000,
-            'toast' => true,
-        ]);
-    }
+    
+            // add product to cart_product table
+            $cart->products()->attach($this->product_id->id);
+            $this->alert('success', 'Product added to cart successfully!', [
+                'position' => 'top',
+                'timer' => 3000,
+                'toast' => true,
+            ]);
+        }
         $this->emitUp('$refresh');
         return redirect()->to('/product/' . $this->product_id->id);
-
     }
+    
 
     public function confirmAdd($id)
     {
         //if user is not logged in redirect to login page
-            if (!Auth::check()) {
+        if (!Auth::check()) {
             $this->alert('error', 'Please login to add product to cart!', [
                 'position' => 'top',
                 'timer' => 3000,
