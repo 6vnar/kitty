@@ -24,7 +24,7 @@
                 <img class="relative w-36 h-36" src=" {{ asset($product->image_path) }}">
             </div>
             <div class="relative text-white px-6 pb-3 mt-3">
-                <span class="block opacity-75 -mb-1 ">{{ $product->brand->name }}</span>
+                {{-- <span class="block opacity-75 -mb-1 ">{{ $product->brand->name }}</span> --}}
                 <div class="flex justify-between">
                     <span class="block font-semibold text-xl ">{{ $product->name }}</span>
                     <span

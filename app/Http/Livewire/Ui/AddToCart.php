@@ -12,7 +12,7 @@ class AddToCart extends Component
 {
     use LivewireAlert;
     protected $listeners = ['cartUpdated', 'removeFromCart', 'confirmDelete', 'refresh'];
-    public $cart, $cart_id, $quantity = 1;
+    public $cart, $cart_id;
 
     //remove from cart function
     public function removeFromCart()

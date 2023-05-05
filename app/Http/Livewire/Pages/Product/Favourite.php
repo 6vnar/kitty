@@ -4,29 +4,21 @@ namespace App\Http\Livewire\Pages\Product;
 
 use Livewire\Component;
 use App\Models\Product;
-use App\Models\Favourite as FavouriteModel;
+use App\Models\Favorite as FavouriteModel;
 
 class Favourite extends Component
 {
 
-    protected $listeners = ['favouriteUpdated' => '$favouriteUpdated', 'productAddedToFavorites' => 'addToFavorites'];
+    protected $listeners = ['favouriteUpdated' , '$favouriteUpdated', 'productAddedToFavorites' , 'addToFavorites','updateFavorites'];
     public $favorites;
 
     public function mount()
     {
-        if (auth()->check()) {
-            $this->favorites = Product::whereHas('favorites', function ($query) {
-                $query->where('user_id', auth()->user()->id);
-            })->get();
-        }
+        $this->favorites = FavouriteModel::where('user_id', auth()->id())->with('products')->get();
     }
 
     public function render()
     {
-
-        return view('livewire.pages.product.favourite'
-        , [
-            'favorites' => $this->favorites
-        ]);
+        return view('livewire.pages.product.favourite'  );
     }
 }
