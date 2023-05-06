@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Livewire\Pages\Admin\Control;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use Livewire\Component;
 
 class Main extends Component

@@ -34,6 +34,8 @@ return [
     'View' => 'View',
     'Add Brand' => 'Add Brand',
     'add' => 'Add',
+    'Brand'=>'Brand',
+    'Category' => 'Category',
     'Brand Name' => 'Brand Name',
     'Description' => 'Description',
     'Select Image' => 'Select Image',
