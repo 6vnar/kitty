@@ -8,7 +8,6 @@
             <thead>
                 <tr class="w-full flex  justify-between gap-6 p-3 m-3 ">
                     <th class=" @if (app()->getLocale() == 'ar') text-right @else text-left @endif">
-
                     </th>
                     <th class=" @if (app()->getLocale() == 'ar') text-right @else text-left @endif">
                         {{ __('ui.Brand') }}
@@ -22,7 +21,6 @@
                 </tr>
             </thead>
             <tbody class="w-full flex flex-col justify-between gap-6  ">
-
                 @foreach ($brands as $brand)
                 <tr class="w-full flex  justify-between gap-6 p-3 m-3 bg-white border-b border-gray-200 shadow-sm sm:rounded-lg">
                     <td>
@@ -54,9 +52,7 @@
                         </a>
                     </td>
                 </tr>
-
                 @endforeach
-
             </tbody>
         </table>
         @else
