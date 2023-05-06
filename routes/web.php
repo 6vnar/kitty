@@ -76,10 +76,12 @@ Route::middleware(['auth:sanctum'])->group(function () {
         // brand group
         Route::get('/brand', Brand::class)->name('brand');
         Route::get('/brand/add', BrandAdd::class)->name('brand.add');
+        Route::get('/brand/edit', BrandEdit::class)->name('brand.edit');
         // category group
         // Route::get('/category', Category::class)->name('category');
         Route::get('/category/{category_id}', Category::class)->name('category-show');
         Route::get('/category/add', CategoryAdd::class)->name('category.add');
+        Route::get('/category/edit', CategoryEdit::class)->name('category.edit');
         // control group
         Route::get('/control', Control::class)->name('control');
         
