@@ -67,5 +67,6 @@ return [
     'comment' => 'التعليق',
     'problem description' => 'وصف المشكلة',
     'personal information' => 'معلومات شخصية ' ,
+    'controlbc' => 'التحكم',
 
 ];

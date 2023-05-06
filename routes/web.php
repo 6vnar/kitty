@@ -28,6 +28,7 @@ use App\Http\Livewire\Pages\Admin\{
     Product\Edit as ProductEdit,
     super\Main as Admins ,
     super\Add as AdminAdd,
+    control\Main as Control,
 
 };
 
@@ -75,12 +76,12 @@ Route::middleware(['auth:sanctum'])->group(function () {
         // brand group
         Route::get('/brand', Brand::class)->name('brand');
         Route::get('/brand/add', BrandAdd::class)->name('brand.add');
-        // Route::get('/brand/edit/{id}', BrandEdit::class)->name('brand.edit');
         // category group
         // Route::get('/category', Category::class)->name('category');
         Route::get('/category/{category_id}', Category::class)->name('category-show');
         Route::get('/category/add', CategoryAdd::class)->name('category.add');
-        // Route::get('/category/edit/{id}', CategoryEdit::class)->name('category.edit');
+        // control group
+        Route::get('/control', Control::class)->name('control');
         
     });
     Route::get('/add-to-cart', CartController::class)->name('cart.add');

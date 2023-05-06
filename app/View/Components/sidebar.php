@@ -33,11 +33,9 @@ class sidebar extends Component
                 __('ui.Managements'),
                 [
                     new TabItem(__('ui.Add Brand') ,'fa-solid fa-circle-plus','brand.add'),
-                    // new TabItem(__('ui.Control Brand') ,'fa-solid fa-circle-plus','brand.edit'),
                     new TabItem(__('ui.Add category'), 'fa-solid fa-circle-plus','category.add'),
-                    // new TabItem(__('ui.Add category'), 'fa-solid fa-circle-plus','category.edit'),
                     new TabItem(__('ui.Add category'), 'fa-solid fa-circle-plus', 'product.add'),
-                    // new TabItem(__('ui.Add category'), 'fa-solid fa-circle-plus','product.edit'),
+                    new TabItem(__('ui.controlbc'), 'fa-solid fa-circle-plus', 'control'),
                 ],
                 true
             ),

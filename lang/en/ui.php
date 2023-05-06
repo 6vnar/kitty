@@ -65,5 +65,6 @@ return [
     'comment' => 'Comment' ,
     'problem description' => 'Problem Description' ,
     'personal information' => 'personal information',
+    'controlbc' => 'Control',
 
 ];
