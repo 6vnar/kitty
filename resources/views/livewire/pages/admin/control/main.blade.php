@@ -6,14 +6,22 @@
         <li class="mr-2" role="presentation">
             <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">{{__('ui.Category')}}</button>
         </li>
-        
+
     </ul>
 </div>
 <div id="myTabContent">
     <div class="hidden p-4 rounded-lg" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-    <livewire:pages.admin.brand.edit  />
+        @if (count($brand) > 0)
+        <livewire:pages.admin.brand.edit :brand="$brand" key="{{ now() }}" />
+        @else
+        <p class="text-xl">{{ __('ui.Your cart is empty.') }}</p>
+        @endif
     </div>
     <div class="hidden p-4 rounded-lg" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
-    <livewire:pages.admin.category.edit />
+    @if (count($category) > 0)
+    <livewire:pages.admin.category.edit  :category="$category" key="{{ now() }}"/>
+    @else
+        <p class="text-xl">{{ __('ui.Your cart is empty.') }}</p>
+        @endif
     </div>
 </div>

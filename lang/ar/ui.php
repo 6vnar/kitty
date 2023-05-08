@@ -70,5 +70,4 @@ return [
     'problem description' => 'وصف المشكلة',
     'personal information' => 'معلومات شخصية ' ,
     'controlbc' => 'التحكم',
-
 ];

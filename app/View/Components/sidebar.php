@@ -34,7 +34,7 @@ class sidebar extends Component
                 [
                     new TabItem(__('ui.Add Brand') ,'fa-solid fa-circle-plus','brand.add'),
                     new TabItem(__('ui.Add category'), 'fa-solid fa-circle-plus','category.add'),
-                    new TabItem(__('ui.Add category'), 'fa-solid fa-circle-plus', 'product.add'),
+                    new TabItem(__('ui.Add product'), 'fa-solid fa-circle-plus', 'product.add'),
                     new TabItem(__('ui.controlbc'), 'fa-solid fa-circle-plus', 'control'),
                 ],
                 true
