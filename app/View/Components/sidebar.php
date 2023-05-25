@@ -6,14 +6,19 @@ use Illuminate\View\Component;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Service;
 class sidebar extends Component
 {
     public $tabs;
     public $admins;
     public $category;
-    public $langs;
+    public $langs , $services;
     public $category_id;
+    
 
+   
+
+    
     /**
      * Create a new component instance.
      *
@@ -26,6 +31,7 @@ class sidebar extends Component
             'ar' => 'عربي',
         ];
 
+        
         $this->category = Category::all();
             
         $this->admins = [
@@ -52,10 +58,13 @@ class sidebar extends Component
             return true;
         })->toArray();
     }
+   
     public function render()
     {
+        $this->services = Service::all();
         return view('components.sidebar');
     }
+
 }
 
 class Tab

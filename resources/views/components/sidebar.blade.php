@@ -143,8 +143,8 @@
                             @forelse ($category as $categor)
                             <a href="{{ route('category-show' , ['category_id' => $categor->id]) }}" class="flex items-center w-full space-x-2 text-white bg-[#fbdddf] rounded-lg">
                                 <span aria-hidden="true" class="px-2 py-1 bg-[#fb97ac] rounded-lg @if (app()->getLocale() == 'ar') ml-2 @else @endif">
-                                <i class="fa-solid fa-folder-open-o fa-2x "></i>
-                                <!-- <i class="fa-solid fa-circle-plus"></i> -->
+                                    <i class="fa-solid fa-folder-open-o fa-2x "></i>
+                                    <!-- <i class="fa-solid fa-circle-plus"></i> -->
                                 </span>
                                 <span>{{ $categor->name }}</span>
                             </a>
@@ -170,21 +170,28 @@
                         </div>
                     </nav>
                     <!-- open messages -->
-                    <section x-show="currentSidebarTab == 'messagesTab'" class="px-4 py-6">
-                        <h2 class="text-xl mb-6"> {{ __('ui.Messages') }}</h2>
-                        <div id="myDiv" class="z-9 h-9 mt-6  w-full rounded-md bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-0.5">
+                    <section x-show="currentSidebarTab == 'messagesTab'" class=" py-6">
+                        <h2 class="text-xl mb-6 px-4"> {{ __('ui.Messages') }}</h2>
+                        <div id="myDiv" class="z-9 h-9 mt-6  w-full ">
+                        @foreach ($services as $service)
                             <div class="px-6 gap-2  h-full w-full bg-white">
-                                <div class="flex  justify-between items-center">
-                                    <i class="fa-solid fa-user  h-4 w-4 p-2 " style="color: #e74793;"></i>
-                                    <div>
-                                        <h1 class="text-md">subject</h1>
+                                <div onclick="toggleText()" class="flex justify-between  items-center">
+                                    <div class="flex justify-between gap-1 items-center px-2">
+                                        <div id="dots" class="flex justify-between gap-1 items-center">
+                                            <i class="fa-solid fa-user  h-4 w-4 " style="color: #e74793;"></i>
+                                            <h1 class="text-md ">{{ $service->subject }}</h1>
+                                        </div>
+                                        <p>
+                                            <span id="more" class="hidden w-full">{{ $service->comment }}<span>
+                                        </p>
+                                        <button id="button" class="text-sm font-bold ">
+                                            <span><i class="fa-solid fa-chevron-down fa-fade h-3 w-3" style="color: #000;"></i></span>
+                                        </button>
                                     </div>
-                                    <i class="fa-solid fa-chevron-down fa-fade h-3 w-3" onclick="toggleHeight()" style="color: #000;"></i>
                                 </div>
-                                <div>
-                                    <p id="p" class=" text-sm ">message</p>
-                                </div>
+                                <hr class="w-full h-1 my-8 bg-gray-200 border-0 rounded dark:bg-gray-700">
                             </div>
+                            @endforeach
                         </div>
                     </section>
                     <!-- open notifications -->
@@ -234,16 +241,74 @@
         }
     }
 
-    function toggleHeight() {
-        const div = document.getElementById('myDiv');
-        div.classList.toggle('h-36');
-        div.classList.toggle('transition-all');
-        div.classList.toggle('duration-500');
-        div.classList.toggle('ease-in-out');
-        const p = document.getElementById('p');
-        p.classList.toggle('block');
-        p.classList.toggle('transition-all');
-        p.classList.toggle('duration-500');
-        p.classList.toggle('ease-in-out');
+    // function toggleHeight() {
+    //     const div = document.getElementById('myDiv');
+    //     div.classList.toggle('h-36');
+    //     div.classList.toggle('transition-all');
+    //     div.classList.toggle('duration-500');
+    //     div.classList.toggle('ease-in-out');
+    //     const p = document.getElementById('p');
+    //     p.classList.toggle('block');
+    //     p.classList.toggle('transition-all');
+    //     p.classList.toggle('duration-500');
+    //     p.classList.toggle('ease-in-out');
+    // }
+    function toggleText() {
+        var dots = document.getElementById("dots");
+        var moreText = document.getElementById("more");
+        var button = document.getElementById("button");
+
+        if (dots.classList.contains("hidden")) {
+            // Show the dots
+            dots.classList.remove("hidden");
+
+            // Hide the more text
+            moreText.classList.add("hidden");
+
+            // change icon  of the button
+            button.innerHTML = '<i class="fa-solid fa-chevron-down fa-fade h-3 w-3"  style="color: #000;"></i>';
+        } else {
+            // Hide the dots
+            dots.classList.add("hidden");
+
+            // hide the more text
+            moreText.classList.remove("hidden");
+
+            // change text of the button
+            button.innerHTML = '<i class="fa-solid fa-chevron-up fa-fade h-3 w-3"  style="color: #000;"></i>';
+        }
     }
 </script>
+<!-- 
+ Show tooltip on top 
+<button data-tooltip-target="tooltip-top" data-tooltip-placement="top" type="button" class="mb-2 md:mb-0 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Tooltip top</button>
+<div id="tooltip-top" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+    Tooltip on top
+    <div class="tooltip-arrow" data-popper-arrow></div>
+</div>
+
+ Show tooltip on right
+<button data-tooltip-target="tooltip-right" data-tooltip-placement="right" type="button" class="mb-2 md:mb-0 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Tooltip right</button>
+<div id="tooltip-right" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+    Tooltip on right
+    <div class="tooltip-arrow" data-popper-arrow></div>
+</div>
+
+ Show tooltip on bottom 
+<button data-tooltip-target="tooltip-bottom" data-tooltip-placement="bottom" type="button" class="mb-2 md:mb-0 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Tooltip bottom</button>
+<div id="tooltip-bottom" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+    Tooltip on bottom
+    <div class="tooltip-arrow" data-popper-arrow></div>
+</div>
+
+ Show tooltip on left 
+<button data-tooltip-target="tooltip-left" data-tooltip-placement="left" type="button" class="mb-2 md:mb-0 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Tooltip left</button>
+<div id="tooltip-left" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+    Tooltip on left
+    <div class="tooltip-arrow" data-popper-arrow></div>
+</div>
+
+Toast
+
+
+-->
